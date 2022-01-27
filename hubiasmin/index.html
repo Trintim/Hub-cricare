@@ -2,32 +2,33 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title> Hub do Cricaré</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <title> Hub do Cricaré</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
+    
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- Template Main CSS File -->
+    <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
@@ -628,7 +629,7 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq-content-1">
+                        data-bs-target="#faq-content-1" style="font-size: 1.5rem;">
                         Qualquer pessoa pode ter acesso ao HUB do Cricaré?
                       </button>
                     </h2>
@@ -643,7 +644,7 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq-content-2">
+                        data-bs-target="#faq-content-2" style="font-size: 1.5rem;">
                         Qual é o horario de funcionamento do HUB?
                       </button>
                     </h2>
@@ -680,12 +681,12 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq2-content-1">
+                        data-bs-target="#faq2-content-1" style="font-size: 1.5rem;">
                         Posso utilizar a estrutura do HUB em qualquer momento?
                       </button>
                     </h2>
                     <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                      <div class="accordion-body">
+                      <div class="accordion-body" >
                         Sim, porem com agendamento de horario previo, pois nossas equipes estão trabalhando em
                         determinados momentos.
                       </div>
@@ -695,7 +696,7 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq2-content-2">
+                        data-bs-target="#faq2-content-2" style="font-size: 1.5rem;">
                         Quais são as vantagens de ser um parceiro do HUB do Cricaré?
                       </button>
                     </h2>
@@ -763,7 +764,8 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contato2.php" method="POST" role="form" class="">
+            <form action="./forms/contato2.php" method="POST" role="form" class="">
+              
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nome" required>
@@ -798,6 +800,20 @@
                 <div class="sent-message">Sua Mensagem foi enviada com Sucesso!</div>
               </div>
             -->
+
+                <div class="modal fade" id="modal-mensagem">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                              <h4 class="modal-title" style="color: rgb(22, 184, 130); text-align: center;">Sucesso</h4>
+                          </div>
+                          <div class="modal-body" style="text-align: center;">
+                              <p>Sua Mensagem foi enviada com sucesso!!</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
 
               <div class="text-center">
@@ -925,6 +941,13 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $("#btn-mensagem").click(function () {
+      $("#modal-mensagem").modal();
+    });
+  </script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
