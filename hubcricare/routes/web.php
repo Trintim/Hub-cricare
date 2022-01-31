@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SiteController;
+use App\Mail\HubMail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/home', SiteController::class);
 Route::post('/send-email', [SiteController::class, 'sendEmail'])->name('site.contato');
+

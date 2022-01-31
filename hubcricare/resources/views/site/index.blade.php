@@ -75,7 +75,7 @@
             <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
                 <div class="col-xl-6 col-lg-8">
                     <h1>Conheça o HUB do Cricaré<span>.</span></h1>
-                    <h2>Inovar é mudar. Fazer diferente.</h2>
+                    <h2 class="type-animation">Inovar é mudar. Fazer diferente.</h2>
                 </div>
             </div>
 
@@ -399,10 +399,10 @@
 
                     </div>
 
-                    <div class="col-lg-8 mt-5 mt-lg-0">
-
+                <div class="col-lg-8 mt-5 mt-lg-0">
                         <form action="{{ route('site.contato') }}" method="POST" role="form" enctype="multipart/form-data">
                             @csrf
+                            <div id="liveAlertPlaceholder"></div>
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <input type="text" name="name" class="form-control" id="name" placeholder="Nome" required>
@@ -425,7 +425,7 @@
 
 
                             <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" required></textarea>
+                                <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" ></textarea>
                                 <br>
                             </div>
                             <!--
@@ -435,22 +435,6 @@
                 <div class="sent-message">Sua Mensagem foi enviada com Sucesso!</div>
               </div>
             -->
-
-                            <div class="modal fade" id="modal-mensagem">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
-                                            <h4 class="modal-title" style="color: rgb(22, 184, 130); text-align: center;">Sucesso</h4>
-                                        </div>
-                                        <div class="modal-body" style="text-align: center;">
-                                            <p>Sua Mensagem foi enviada com sucesso!!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
                             <div class="text-center">
                                 <button style="background: #35ecbe;
                                     border: 0;
@@ -459,8 +443,6 @@
                                     transition: 0.4s;
                                     border-radius: 4px;" type="submit">Enviar</button>
                             </div>
-                            <button class="btn btn-primary" id="btn-mensagem" style="align-items: center;">Enviar Mensagem</button>
-
                         </form>
 
                     </div>
@@ -468,7 +450,9 @@
                 </div>
 
             </div>
+
         </section>
+
         <!-- End Contact Section -->
 
     </main>
@@ -573,6 +557,7 @@
             $("#modal-mensagem").modal();
         });
     </script>
+
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>

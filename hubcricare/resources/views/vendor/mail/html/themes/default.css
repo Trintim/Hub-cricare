@@ -11,7 +11,7 @@ body *:not(html):not(style):not(br):not(tr):not(code) {
 body {
     -webkit-text-size-adjust: none;
     background-color: #ffffff;
-    color: #718096;
+    color: #000000;
     height: 100%;
     line-height: 1.4;
     margin: 0;
@@ -84,6 +84,12 @@ img {
     margin: 0;
     padding: 0;
     width: 100%;
+    background: linear-gradient(
+        90deg,
+        rgb(173, 8, 165) 0%,
+        rgb(0, 0, 0) 50%,
+        rgb(28, 205, 211) 100%
+    );
 }
 
 .content {
@@ -100,6 +106,13 @@ img {
 .header {
     padding: 25px 0;
     text-align: center;
+    /* ackground: linear-gradient(red, blue); */
+    background: linear-gradient(
+        90deg,
+        rgba(173, 8, 165) 0%,
+        rgb(0, 0, 0) 50%,
+        rgb(28, 205, 211) 100%
+    );
 }
 
 .header a {
@@ -123,9 +136,13 @@ img {
     -premailer-cellpadding: 0;
     -premailer-cellspacing: 0;
     -premailer-width: 100%;
-    background-color: #edf2f7;
-    border-bottom: 1px solid #edf2f7;
-    border-top: 1px solid #edf2f7;
+    background: linear-gradient(
+        90deg,
+        rgb(173, 8, 165) 0%,
+        rgb(0, 0, 0) 50%,
+        rgb(28, 205, 211) 100%
+    );
+    
     margin: 0;
     padding: 0;
     width: 100%;
@@ -166,7 +183,13 @@ img {
     margin: 0 auto;
     padding: 0;
     text-align: center;
-    width: 570px;
+    width: -webkit-fill-available;
+    background: linear-gradient(
+        90deg,
+        rgb(173, 8, 165) 0%,
+        rgb(0, 0, 0) 50%,
+        rgb(28, 205, 211) 100%
+    );
 }
 
 .footer p {
@@ -191,13 +214,13 @@ img {
 }
 
 .table th {
-    border-bottom: 1px solid #edeff2;
+    border-bottom: 1px solid #640920;
     margin: 0;
     padding-bottom: 8px;
 }
 
 .table td {
-    color: #74787e;
+    color: #0f52b8;
     font-size: 15px;
     line-height: 18px;
     margin: 0;

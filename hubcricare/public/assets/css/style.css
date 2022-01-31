@@ -212,6 +212,7 @@ h6 {
 
 .navbar {
     padding: 0;
+    margin-top: 20px;
 }
 
 .navbar ul {
@@ -456,7 +457,7 @@ h6 {
 }
 
 #hero h1 {
-    margin: 0;
+    margin: 0 auto;
     font-size: 56px;
     font-weight: 700;
     line-height: 64px;
@@ -469,9 +470,43 @@ h6 {
 }
 
 #hero h2 {
-    color: rgba(255, 255, 255, 0.9);
-    margin: 10px 0 0 0;
-    font-size: 24px;
+    color: #35ecbe;
+    margin: 0 auto;
+    font-size: 24px; 
+    border-right: 2px solid rgb(24, 253, 139);   
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* .line{
+    margin: 0 auto;
+    border-right: 2px solid rgb(24, 253, 139);
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    justify-content: center;
+} */
+.type-animation{
+    animation: blinkCursor 500ms steps(40) infinite normal, typing 4s steps(40) 1s infinite both;
+}
+
+@keyframes typing {
+    from{
+        width: 0;
+    }
+    to{
+        width: 15em;
+    }    
+}
+
+@keyframes blinkCursor{
+
+    from{
+        border-right-color: #35ecbe;;
+    } 
+    to{
+        border-right-color: transparent;
+    }
 }
 
 #hero .icon-box {
