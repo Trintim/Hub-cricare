@@ -763,8 +763,104 @@ section {
 .services .icon-box:hover {
     border-color: #fff;
     box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
-    transform: translateY(-10px);
+    /* transform: translateY(-10px); */
 }
+
+  .card {
+    border: hidden;
+    width: 100%;
+    height: 380px;
+    float: left;
+}
+  
+ .services .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+  
+  .card:hover .content {
+    transform: rotateX( 180deg ) ;
+    transition: transform 0.5s;
+  }
+  
+  .front,
+  .back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    line-height: 300px;
+    color: #03446A;
+    text-align: center;
+    font-size: 60px;
+    border-radius: 5px;
+    backface-visibility: hidden;
+  }
+  
+  .back {
+    background: #000303;
+    color: white;
+    transform: rotateX( 180deg );
+  }
+
+  .icon-front{
+    text-align: center;
+    padding: 99px 20px;
+    background: #fff;
+  }
+
+  .icon-front .icon {
+    margin: 0 auto;
+    width: 100%;
+    height: 64px;
+    background: #35ecbe;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: 0.3s;   
+  }
+  .icon-front .icon i {
+    color: #151515;
+    font-size: 45px;
+  }
+
+  .icon-front h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .icon-front h4 a {
+    color: #151515;
+    transition: ease-in-out 0.3s;
+  }
+  .icon-front p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .icon-back{
+    text-align: center;
+    padding: 142px 20px;
+    
+  }
+
+  .icon-back p {
+    line-height: 24px;
+    font-size: 18px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 
 
 /*--------------------------------------------------------------
@@ -1509,6 +1605,7 @@ section {
     line-height: 1;
     font-weight: 700;
     text-transform: uppercase;
+    text-align: center;
 }
 
 #footer .footer-top .footer-info h3 span {
@@ -1521,6 +1618,7 @@ section {
     margin-bottom: 0;
     font-family: "Raleway", sans-serif;
     color: #fff;
+    text-align: -webkit-center;
 }
 
 #footer .footer-top .social-links a {

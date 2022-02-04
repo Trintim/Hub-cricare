@@ -2,7 +2,7 @@
     <td class="header">
         <a href="#" style="display: inline-block;">
             @if (trim($slot) === 'Hub do Cricaré')
-            <img src="assets/img/logo.png" class="logo" alt="Hub Logo">
+            <h1 style="font-size: 24px; color: #fff">Hub do cricaré</h1>
             @else
             {{ $slot }}
             @endif

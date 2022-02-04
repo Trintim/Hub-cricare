@@ -15,6 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/home', SiteController::class);
+Route::resource('/', SiteController::class);
 Route::post('/send-email', [SiteController::class, 'sendEmail'])->name('site.contato');
-

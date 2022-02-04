@@ -44,7 +44,7 @@
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center justify-content-lg-between">
 
-            <h1 class="logo me-auto me-lg-0"><a href="index.html">HUB<span>.</span></a></h1>
+            <h1 class="logo me-auto me-lg-0"><a href="index.html">HUB do Cricaré<span>.</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -92,19 +92,30 @@
 
                 <div class="row">
                     <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" style="height: 100%; object-fit:cover;">
+                                    <img src="assets/img/about.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item" style="height: 100%; object-fit:cover;">
+                                    <img src="assets/img/op.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item" style="height: 100%; object-fit:cover;">
+                                    <img src="assets/img/op1.png" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
                         <h3>Sobre o Hub do Cricaré.</h3>
                         <p class="fst-italic">
-                            O Hub do cricaré é um espaço de conexão em prol da inovação, onde construimos valores e desenvolvemos
-                            ideias.
+                            O Hub do cricaré é um espaço de conexão em prol da inovação, onde construímos valores e desenvolvemos ideias.
                         </p>
                         <ul>
                             <li><i class="ri-check-double-line"></i> Onde a inovação é nossa inspiração</li>
                             <li><i class="ri-check-double-line"></i> Acesso a uma estrutura física adequada</li>
                             <li><i class="ri-check-double-line"></i> Oportunidade para empresas e investidores</li>
-                            <li><i class="ri-check-double-line"></i> Cultura inovadora e com ampla colaboratividade</li>
+                            <li><i class="ri-check-double-line"></i> Cultura inovadora e com ampla colaboração entre os membros</li>
                             <li><i class="ri-check-double-line"></i> Desenvolver soluções com o envolvimento direto de vários setores
                                 da empresa.</li>
                         </ul>
@@ -119,9 +130,14 @@
         </section>
         <!-- End About Section -->
 
+
         <!-- ======= Clients Section ======= -->
         <section id="clients" class="clients">
             <div class="container" data-aos="zoom-in">
+                <div class="section-title">
+                    <h2>Clientes</h2>
+                    <p>Veja quem são nossos clientes e parceiros</p>
+                </div>
 
                 <div class="clients-slider swiper">
                     <div class="swiper-wrapper align-items-center">
@@ -186,7 +202,7 @@
 
                 <div class="text-center">
                     <h3>Agende uma visita agora mesmo</h3>
-                    <p> Deseja conhecer nosso espaço, marque agora mesmo... e venha nos conhecer pessoalmente :)</p>
+                    <p>Deseja conhecer nosso espaço, marque agora mesmo... e venha nos conhecer pessoalmente :)</p>
                     <a class="cta-btn" href="#contact">Marcar</a>
                 </div>
 
@@ -204,56 +220,122 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4><a href="">Serviços Corporativos</a></h4>
-                            <p>Aluguel de Impressoras e Projetores, Telefonia Via IP, Mapeamento de Drones, Tour Virtual e Manutenção
-                                de computadores</p>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card">
+                            <div class="content">
+                                <div class="front">
+                                    <div class="icon-front">
+                                        <div class="icon">
+                                            <i class="bx bx-file"></i>
+                                        </div>
+                                        <h4><a>Serviços Corporativos</a></h4>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <div class="icon-back">
+                                        <p>Aluguel de Impressoras e Projetores, Telefonia Via IP, Mapeamento de Drones, Tour Virtual e Manutenção de computadores</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bi bi-laptop"></i></div>
-                            <h4><a href="">Desenvolvimento de Plataformas Educacionais</a></h4>
-                            <p>Moodle (Instalação, Customização Ava), Revistas Eletrônicas OJS, Repositório Institucional e Processo
-                                de Digitação de Arquivos</p>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="card">
+                            <div class="content">
+                                <div class="front">
+                                    <div class="icon-front">
+                                        <div class="icon">
+                                            <i class="bi bi-laptop"></i>
+                                        </div>
+                                        <h4><a>Desenvolvimento de Plataformas Educacionais</a></h4>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <div class="icon-back">
+                                        <p>Moodle (Instalação, Customização Ava), Revistas Eletrônicas OJS, Repositório Institucional e Processo de Digitação de Arquivos</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bi bi-camera-reels"></i></div>
-                            <h4><a href="">Gerenciamento de Transmissões</a></h4>
-                            <p>Gestão de Lives, YouTube, OBS Studio, Facebook e Instagram</p>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="card">
+                            <div class="content">
+                                <div class="front">
+                                    <div class="icon-front">
+                                        <div class="icon">
+                                            <i class="bi bi-camera-reels"></i>
+                                        </div>
+                                        <h4><a>Gerenciamento de Transmissões</a></h4>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <div class="icon-back">
+                                        <p>Gestão de Lives, OBS Studio, YouTube, Facebook e Instagram</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-arch"></i></div>
-                            <h4><a href="">Assessoria Juridica</a></h4>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                        <div class="card">
+                            <div class="content">
+                                <div class="front">
+                                    <div class="icon-front">
+                                        <div class="icon">
+                                            <i class="bx bx-arch"></i>
+                                        </div>
+                                        <h4><a>Assessoria Jurídica</a></h4>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <div class="icon-back">
+                                        <p>Segurança Jurídica para seu Negócio, Disputas Judiciais, Divisão Societária, Problemas com contrato, entre outros tipos de serviços Jurídicos.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-slideshow"></i></div>
-                            <h4><a href="">Marketing Digital</a></h4>
-                            <p>Gerenciamento de Mídia Social, Desenvolvimento de Sites, Criação e Edição de Videos Institucionais,
-                                Trafego Pago e Material Gráfico</p>
+                        <div class="card">
+                            <div class="content">
+                                <div class="front">
+                                    <div class="icon-front">
+                                        <div class="icon">
+                                            <i class="bx bx-slideshow"></i>
+                                        </div>
+                                        <h4><a>Marketing Digital</a></h4>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <div class="icon-back">
+                                        <p>Gerenciamento de Mídia Social, Desenvolvimento de Sites, Criação e Edição de Vídeos Institucionais, Trafego Pago e Material Gráfico</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="card">
+                            <div class="content">
+                                <div class="front">
+                                    <div class="icon-front">
+                                        <div class="icon">
+                                            <i class="bi bi-code-slash"></i>
+                                        </div>
+                                        <h4><a>Servidores</a></h4>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <div class="icon-back">
+                                        <p>Implantação de Servidores Linux, Windows Server e Apache</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bi bi-code-slash"></i></div>
-                            <h4><a href="">Servidores</a></h4>
-                            <p>Implantação de Servidores Linux, Windows Server e Apache</p>
-                        </div>
-                    </div>
 
                 </div>
 
@@ -265,7 +347,7 @@
 
         </div>
         </section>
-        -->
+
 
 
         <!-- ======= Team Section ======= -->
@@ -300,12 +382,12 @@
                                     <div class="accordion-item">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2" style="font-size: 1.5rem;">
-                                                Qual é o horario de funcionamento do HUB?
+                                                Qual é o horário de funcionamento do HUB?
                                             </button>
                                         </h2>
                                         <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                                             <div class="accordion-body">
-                                                O local físico do HUB funciona de 08:00 até 18:00. Mas você pode nos contatar a qualquer hora
+                                                O local físico do HUB funciona de 08:00 as 18:00 horas. Mas você pode nos contatar a qualquer hora
                                                 pelas redes sociais.
                                             </div>
                                         </div>
@@ -322,12 +404,12 @@
                                     <div class="accordion-item">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1" style="font-size: 1.5rem;">
-                                                Posso utilizar a estrutura do HUB em qualquer momento?
+                                                Posso utilizar a estrutura do HUB à qualquer momento?
                                             </button>
                                         </h2>
                                         <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                                             <div class="accordion-body">
-                                                Sim, porem com agendamento de horario previo, pois nossas equipes estão trabalhando em
+                                                Sim, porem com agendamento de horário previo, pois nossas equipes estão trabalhando em
                                                 determinados momentos.
                                             </div>
                                         </div>
@@ -399,7 +481,7 @@
 
                     </div>
 
-                <div class="col-lg-8 mt-5 mt-lg-0">
+                    <div class="col-lg-8 mt-5 mt-lg-0">
                         <form action="{{ route('site.contato') }}" method="POST" role="form" enctype="multipart/form-data">
                             @csrf
                             <div id="liveAlertPlaceholder"></div>
@@ -425,16 +507,13 @@
 
 
                             <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" ></textarea>
+                                <textarea class="form-control" name="message" rows="5" placeholder="Mensagem"></textarea>
                                 <br>
                             </div>
-                            <!--
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Sua Mensagem foi enviada com Sucesso!</div>
-              </div>
-            -->
+
+                            <div id="liveAlertPlaceholder"></div>
+                            <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+
                             <div class="text-center">
                                 <button style="background: #35ecbe;
                                     border: 0;
@@ -464,19 +543,20 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-md-4 mb-4 mb-md-0 footer-links">
+                    <div class="footer-links">
                         <div class="footer-info">
-                            <h3>HUB<span>.</span></h3>
+                            <h3>HUB do Cricaré<span>.</span></h3>
                             <p>
                                 Rua Humberto de Almeida Francklin, 217, <br> B. Universitário São Mateus - Espírito Santo | CEP:
                                 29.933.415<br><br>
                                 <strong>Telefone:</strong> (27) 3313-0000<br>
                                 <strong>Email:</strong> contato@hubdocricare.com<br>
                             </p>
-                            <div class="social-links mt-3">
+                            <div class="social-links mt-3" style="text-align: -webkit-center;">
                                 <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
-                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                <a href="https://www.facebook.com/hubdocricare" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+                                <a href="https://instagram.com/hubcricare?utm_medium=copy_link" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+                                <!-- <a href="#" class="youtube"><i class="bx bxl-youtube"></i></a> -->
                                 <!--
                 <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
@@ -485,7 +565,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-7 ms-auto footer-links">
+                    <!-- <div class="col-md-7 ms-auto footer-links">
                         <div class="row site-section pt-0">
                             <div class="col-md-4 mb-4 mb-md-0">
                                 <h3>Navegação</h3>
@@ -518,7 +598,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -556,6 +636,23 @@
         $("#btn-mensagem").click(function() {
             $("#modal-mensagem").modal();
         });
+    </script>
+    <script>
+        var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        var alertTrigger = document.getElementById('liveAlertBtn')
+
+        function alert(message, type) {
+            var wrapper = document.createElement('div')
+            wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+            alertPlaceholder.append(wrapper)
+        }
+
+        if (alertTrigger) {
+            alertTrigger.addEventListener('click', function() {
+                alert('Nice, you triggered this alert message!', 'success')
+            })
+        }
     </script>
 
 
