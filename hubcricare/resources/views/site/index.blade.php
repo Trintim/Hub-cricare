@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/img/icon.png" rel="icon">
+    <link href="assets/img/icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -44,10 +44,9 @@
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center justify-content-lg-between">
 
-            <h1 class="logo me-auto me-lg-0"><a href="index.html">HUB do Cricaré<span>.</span></a></h1>
+            <!-- <h1 class="logo me-auto me-lg-0"><a href="">HUB do Cricaré.</a></h1> -->
             <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+            <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo3.png" alt="" class="img-fluid"></a>
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
@@ -74,13 +73,17 @@
 
             <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
                 <div class="col-xl-6 col-lg-8">
-                    <h1>Conheça o HUB do Cricaré<span>.</span></h1>
+                    <h1>Conheça o HUB do Cricaré.</h1>
                     <h2 class="type-animation">Inovar é mudar. Fazer diferente.</h2>
                 </div>
             </div>
-
-
         </div>
+
+        <a href="https://wa.me/5527998028696?text=Ol%C3%A1%2C+venha+tirar+suas+d%C3%BAvidas+com+a+gente" class="float" target="_blank">
+            <div class="whatsapp">
+                <i class="bi bi-whatsapp"></i>
+            </div>
+        </a>
     </section>
     <!-- End Hero -->
 
@@ -94,14 +97,14 @@
                     <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
-                                <div class="carousel-item active" style="height: 100%; object-fit:cover;">
-                                    <img src="assets/img/about.jpg" class="d-block w-100" alt="...">
+                                <div class="carousel-item active">
+                                    <img src="assets/img//team/time1.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 360px; object-fit:cover;">
                                 </div>
-                                <div class="carousel-item" style="height: 100%; object-fit:cover;">
-                                    <img src="assets/img/op.png" class="d-block w-100" alt="...">
+                                <div class="carousel-item">
+                                    <img src="assets/img//team/time3.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 360px; object-fit:cover;">
                                 </div>
-                                <div class="carousel-item" style="height: 100%; object-fit:cover;">
-                                    <img src="assets/img/op1.png" class="d-block w-100" alt="...">
+                                <div class="carousel-item">
+                                    <img src="assets/img//team/time0.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 360px; object-fit:cover;">
                                 </div>
                             </div>
                         </div>
@@ -144,7 +147,6 @@
                         <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
                         <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
                         <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
                         <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
                         <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
                         <div class="swiper-slide"><img src="assets/img/clients/client-10.png" class="img-fluid" alt=""></div>
@@ -448,11 +450,6 @@
                     <h2>Contato</h2>
                     <p>Contate-nos</p>
                 </div>
-
-                <div>
-                    <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.687821542588!2d-39.847391984617346!3d-18.722789487291642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xca0d386e92b0fd%3A0x55b36ec246ae1e91!2sR.%20Humberto%20de%20Almeida%20Franklin%2C%20217%20-%20Universit%C3%A1rio%2C%20S%C3%A3o%20Mateus%20-%20ES%2C%2029941-360!5e0!3m2!1spt-BR!2sbr!4v1636569031498!5m2!1spt-BR!2sbr" frameborder="0" allowfullscreen></iframe>
-                </div>
-
                 <div class="row mt-5">
 
                     <div class="col-lg-4">
@@ -481,7 +478,7 @@
 
                     </div>
 
-                    <div class="col-lg-8 mt-5 mt-lg-0">
+                    <div class="col-lg-8 mt-5 mt-lg-0" style="margin-bottom: 20px;">
                         <form action="{{ route('site.contato') }}" method="POST" role="form" enctype="multipart/form-data">
                             @csrf
                             <div id="liveAlertPlaceholder"></div>
@@ -511,8 +508,8 @@
                                 <br>
                             </div>
 
-                            <div id="liveAlertPlaceholder"></div>
-                            <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+                            <!-- <div id="liveAlertPlaceholder"></div>
+                            <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button> -->
 
                             <div class="text-center">
                                 <button style="background: #35ecbe;
@@ -526,6 +523,9 @@
 
                     </div>
 
+                </div>
+                <div>
+                    <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.687821542588!2d-39.847391984617346!3d-18.722789487291642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xca0d386e92b0fd%3A0x55b36ec246ae1e91!2sR.%20Humberto%20de%20Almeida%20Franklin%2C%20217%20-%20Universit%C3%A1rio%2C%20S%C3%A3o%20Mateus%20-%20ES%2C%2029941-360!5e0!3m2!1spt-BR!2sbr!4v1636569031498!5m2!1spt-BR!2sbr" frameborder="0" allowfullscreen></iframe>
                 </div>
 
             </div>
@@ -543,27 +543,41 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="footer-links">
+                    <div class="col-md-6 mb-6 mb-md-0 footer-links">
                         <div class="footer-info">
-                            <h3>HUB do Cricaré<span>.</span></h3>
+                            <h3>HUB do Cricaré.</h3>
                             <p>
                                 Rua Humberto de Almeida Francklin, 217, <br> B. Universitário São Mateus - Espírito Santo | CEP:
                                 29.933.415<br><br>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-6 mb-md-0 footer-links">
+                        <div class="footer-info">
+
+                            <h3>Contato</h3>
+                            <p>
                                 <strong>Telefone:</strong> (27) 3313-0000<br>
                                 <strong>Email:</strong> contato@hubdocricare.com<br>
                             </p>
                             <div class="social-links mt-3" style="text-align: -webkit-center;">
                                 <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
-                                <a href="https://www.facebook.com/hubdocricare" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
-                                <a href="https://instagram.com/hubcricare?utm_medium=copy_link" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+                                <!-- <a href="https://www.facebook.com/hubdocricare" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+                                <a href="https://instagram.com/hubcricare?utm_medium=copy_link" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a> -->
+                                <a href="https://www.facebook.com/hubdocricare" target="_blank"><img src="https://img.icons8.com/color/36/000000/facebook-new.png" /></a>
+                                <a href="https://instagram.com/hubcricare?utm_medium=copy_link" target="_blank"><img src="https://img.icons8.com/color/36/000000/instagram-new--v1.png" /></a>
+                                <a href="https://wa.me/5527998028696?text=Ol%C3%A1%2C+venha+tirar+suas+d%C3%BAvidas+com+a+gente" target="_blank"><img src="https://img.icons8.com/color/36/000000/whatsapp--v1.png" /></a>
                                 <!-- <a href="#" class="youtube"><i class="bx bxl-youtube"></i></a> -->
                                 <!--
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                -->
+                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                                -->
+                                <a href=""><img src="" alt=""></a>
                             </div>
                         </div>
                     </div>
+
 
                     <!-- <div class="col-md-7 ms-auto footer-links">
                         <div class="row site-section pt-0">
