@@ -46,7 +46,7 @@
 
             <!-- <h1 class="logo me-auto me-lg-0"><a href="">HUB do Cricaré.</a></h1> -->
             <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo3.png" alt="" class="img-fluid"></a>
+            <a href="/" class="logo me-auto me-lg-0"><img src="assets/img/logo3.png" alt="" class="img-fluid"></a>
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
@@ -184,7 +184,7 @@
                             <p>Quando integram a rede de um hub de inovação, os empreendedores se tornam visíveis a quem pode
                                 disponibilizar recursos para fazer o negócio prosperar.</p>
                         </div>
-                        <!-- 
+                        <!--
             <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
               <i class="bx bx-shield"></i>
               <h4>Beatae veritatis</h4>
@@ -508,8 +508,7 @@
                                 <br>
                             </div>
 
-                            <!-- <div id="liveAlertPlaceholder"></div>
-                            <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button> -->
+                            <!-- <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button> -->
 
                             <div class="text-center">
                                 <button style="background: #35ecbe;
@@ -517,10 +516,12 @@
                                     padding: 10px 24px;
                                     color: #151515;
                                     transition: 0.4s;
-                                    border-radius: 4px;" type="submit">Enviar</button>
+                                    border-radius: 4px;" type="submit" class="btn btn-primary" id="liveAlertBtn">Enviar</button>
                             </div>
-                        </form>
 
+
+                        </form>
+                        <!-- Button trigger modal -->
                     </div>
 
                 </div>
@@ -664,7 +665,7 @@
 
         if (alertTrigger) {
             alertTrigger.addEventListener('click', function() {
-                alert('Nice, you triggered this alert message!', 'success')
+                alert('Obrigado, recebemos sua mensagem com sucesso!', 'success')
             })
         }
     </script>
