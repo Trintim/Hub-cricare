@@ -167,7 +167,7 @@
                     <div class="card">
                         <div class="content">
                             <div class="front">
-                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/drones.jpg') }}" alt="Imagem drone">
+                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/servicos.jpg') }}" alt="Imagem drone">
                             </div>
                             <div class="back">
                                 <div class="icon-back">
@@ -181,12 +181,7 @@
                     <div class="card">
                         <div class="content">
                             <div class="front">
-                                <div class="icon-front">
-                                    <div class="icon">
-                                        <i class="bi bi-laptop"></i>
-                                    </div>
-                                    <h4><a>Desenvolvimento de Plataformas Educacionais</a></h4>
-                                </div>
+                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/plataforma.jpg') }}" alt="Imagem drone">
                             </div>
                             <div class="back">
                                 <div class="icon-back">
@@ -200,12 +195,7 @@
                     <div class="card">
                         <div class="content">
                             <div class="front">
-                                <div class="icon-front">
-                                    <div class="icon">
-                                        <i class="bi bi-camera-reels"></i>
-                                    </div>
-                                    <h4><a>Gerenciamento de Transmissões</a></h4>
-                                </div>
+                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/gerenciamento.jpg') }}" alt="Imagem drone">
                             </div>
                             <div class="back">
                                 <div class="icon-back">
@@ -219,12 +209,7 @@
                     <div class="card">
                         <div class="content">
                             <div class="front">
-                                <div class="icon-front">
-                                    <div class="icon">
-                                        <i class="bx bx-arch"></i>
-                                    </div>
-                                    <h4><a>Assessoria Jurídica</a></h4>
-                                </div>
+                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/assessoria.jpg') }}" alt="Imagem drone">
                             </div>
                             <div class="back">
                                 <div class="icon-back">
@@ -238,7 +223,7 @@
                     <div class="card">
                         <div class="content">
                             <div class="front">
-                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/desenvolvimento.jpg') }}" alt="Desenvolvimento">
+                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/marketing.jpg') }}" alt="Desenvolvimento">
                             </div>
                             <div class="back">
                                 <div class="icon-back">
@@ -252,7 +237,7 @@
                     <div class="card">
                         <div class="content">
                             <div class="front">
-                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/servidorw.jpg') }}" alt="Servidor">
+                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/implantacao.jpg') }}" alt="Servidor">
                             </div>
                             <div class="back">
                                 <div class="icon-back">
@@ -367,7 +352,7 @@
     </section>
     <!-- End Team Section -->
 
-    <!-- <section id="team" class="team">
+    <section id="team" class="team">
         <div class="container aos-init aos-animate" data-aos="fade-up">
             <div class="section-title">
                 <h2>Equipe</h2>
@@ -377,10 +362,10 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                         <div class="member-img"> <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                            <div class="social"> 
-                                <a href=""><i class="bi bi-twitter"></i></a> 
-                                <a href=""><i class="bi bi-facebook"></i></a> 
-                                <a href=""><i class="bi bi-instagram"></i></a> 
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
                                 <a href=""><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
@@ -392,10 +377,10 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
                         <div class="member-img"> <img src="assets/img/vitor.jpg" class="img-fluid" alt="">
-                            <div class="social"> 
-                                <a href=""><i class="bi bi-twitter"></i></a> 
-                                <a href=""><i class="bi bi-facebook"></i></a> 
-                                <a href=""><i class="bi bi-instagram"></i></a> 
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
                                 <a href=""><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
@@ -407,10 +392,10 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
                         <div class="member-img"> <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                            <div class="social"> 
-                                <a href=""><i class="bi bi-twitter"></i></a> 
-                                <a href=""><i class="bi bi-facebook"></i></a> 
-                                <a href=""><i class="bi bi-instagram"></i></a> 
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
                                 <a href=""><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
@@ -422,10 +407,10 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                         <div class="member-img"> <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                            <div class="social"> 
-                                <a href=""><i class="bi bi-twitter"></i></a> 
-                                <a href=""><i class="bi bi-facebook"></i></a> 
-                                <a href=""><i class="bi bi-instagram"></i></a> 
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
                                 <a href=""><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
@@ -434,10 +419,10 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
