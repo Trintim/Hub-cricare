@@ -24,7 +24,7 @@ class ProductcategorieRequest extends FormRequest
     public function rules()
     {
         return [
-            'categorie' => 'required', 'string', 'max:255',
+            'categorie' => ['required', 'string', 'max:255'],
         ];
     }
 }

@@ -36,6 +36,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
+
         $categories = $this->categories->all();
         return view('admin.produtos.crud', compact('categories'));
     }
@@ -48,14 +49,14 @@ class ProdutoController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        $data = $request->all();
+        $datas = $request->all();
         if($request->hasFile('image')){
-            $data['image'] = $request->file('image')->store('products', 'public');
+            $datas['image'] = $request->file('image')->store('products', 'public');
         }
         else{
             return redirect()->back()->withInput($request->all())->with('danger', 'Insira uma imagem para o produto!');
         }
-        $this->products->create($data);
+        $this->products->create($datas);
         return redirect(route('admin.produtos.index'))->with('success', 'Produto cadastrado com sucesso!');
     }
 
@@ -82,9 +83,9 @@ class ProdutoController extends Controller
     public function edit($id)
     {
         $product = $this->products->find($id);
-        $categories = $this->categorie->all();
+        $categories = $this->categories->all();
 
-        return view('admin.produtos.crud', compact('categories'));
+        return view('admin.produtos.crud', compact(['categories', 'product']));
     }
 
     /**
@@ -96,14 +97,14 @@ class ProdutoController extends Controller
      */
     public function update(ProductRequest $request, $id)
     {
-        $data = $request->all();
+        $datas = $request->all();
         $product = $this->products->find($id);
         if($request->hasFile('image')){
             Storage::delete('public/'.$product->image);
-            $data['image'] = $request->file('image')->store('products', 'public');
+            $datas['image'] = $request->file('image')->store('products', 'public');
         }
 
-        $this->products->update($data);
+        $this->products->update($datas);
         return redirect(route('admin.produtos.index'))->with('success', 'Produto atualizado com sucesso!');
     }
 
@@ -119,5 +120,18 @@ class ProdutoController extends Controller
         Storage::delete('public/'.$product->image);
         $product->delete();
         return redirect(route('admin.produtos.index'))->with('success', 'Produto excluido com sucesso!');
+    }
+
+    public function stateUpdate($id){
+
+        $product = $this->products->find($id);
+
+        if ($product->status) {
+            $product->update(["status" => false]);
+        } else {
+            $product->update(["status" => true]);
+        }
+
+        return redirect(route('admin.produtos.index'))->with('success', 'Status do Produto modificado');
     }
 }

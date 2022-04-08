@@ -18,4 +18,9 @@ class Productcategorie extends Model
     public function products(){
         return $this->hasMany(Product::class);
     }
+
+    public function getCreatedAtFormatAttribute()
+    {
+        return $this->created_at->format('d/m/y');
+    }
 }

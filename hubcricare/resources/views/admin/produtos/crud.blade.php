@@ -21,20 +21,20 @@
         <div class="row">
             <div class="col-12">
                 <div class="card-box table-responsive">
-                    @if (isset($product))
-                        <h4 class="m-t-0 header-title"><b>Editar Projeto</b></h4>
+                    @if (isset($products))
+                        <h4 class="m-t-0 header-title"><b>Editar Produto</b></h4>
                         <p class="text-muted font-14 m-b-30">
-                            Formulário para edição do Projeto.
+                            Formulário para edição do Produto.
                         </p>
                         @else
-                            <h4 class="m-t-0 header-title"><b>Criar novo Projeto</b></h4>
+                            <h4 class="m-t-0 header-title"><b>Criar novo Produto</b></h4>
                             <p class="text-muted font-14 m-b-30">
-                                Formulário para criar um novo Projeto.
+                                Formulário para criar um novo Produto.
                             </p>
 
                     @endif
 
-                    <form id="form-product" method="POST" action=" {{ isset($product) ? route("admin.produtos.update", $product->id) : route("admin.produtos.store")}} " enctype="multipart/form-data">
+                    <form id="form-produtos" method="POST" action=" {{ isset($product) ? route("admin.produtos.update", $product->id) : route("admin.produtos.store")}} " enctype="multipart/form-data">
 
                         @csrf
                         @isset($product)
@@ -49,7 +49,7 @@
                     </form>
 
                     <div class="d-flex justify-content-end mt-3">
-                        <button type="submit" form="form-product" class="btn btn-success mr-2">Salvar</button>
+                    <button type="submit" form="form-produtos" class="btn btn-success mr-2">Salvar</button>
                         <a href=" {{ route('admin.produtos.index') }}" class="btn btn-secondary">Voltar</a>
                     </div>
                 </div>

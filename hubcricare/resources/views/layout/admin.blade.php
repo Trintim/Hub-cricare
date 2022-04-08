@@ -90,11 +90,15 @@
                         <ul class="navigation-menu">
 
                             <li class="has-submenu">
-                                <a href="  "><i class="fi-air-play"></i>Dashboard</a>
+                                <a href=" {{route('admin.home')}} "><i class="fi-air-play"></i>Dashboard</a>
                             </li>
 
                             <li class="has-submenu">
-                                <a href="  "><i class="fi-briefcase"></i>Produtos</a>
+                                <a href=" {{route('admin.produtos.index')}} "><i class="fi-briefcase"></i>Produtos</a>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href=" {{route('admin.productCategories.index')}} "><i class="fi-tag"></i>Categoria Dos Produtos</a>
                             </li>
 
                         </ul>

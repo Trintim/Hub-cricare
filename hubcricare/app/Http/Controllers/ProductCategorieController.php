@@ -54,7 +54,7 @@ class ProductCategorieController extends Controller
         $productcategories->categorie_slug = $slug;
         $productcategories->save();
 
-        return redirect(route('admin.productcategorie.index'))->with('success', 'Categoria de Produto cadastrada com sucesso!');
+        return redirect(route('admin.productCategories.index'))->with('success', 'Categoria de Produto cadastrada com sucesso!');
     }
 
     /**
@@ -81,7 +81,7 @@ class ProductCategorieController extends Controller
     public function edit($id)
     {
         $productcategorie = $this->productcategories->find($id);
-        return view('admin.productcategorie.crud', compact('projectcategorie'));
+        return view('admin.productcategorie.crud', compact('productcategorie'));
     }
 
     /**
@@ -100,7 +100,7 @@ class ProductCategorieController extends Controller
         $datas_treated= array_merge($data, ['categorie_slug' => $slug]);
         $productcategories->update($datas_treated);
 
-        return redirect(route('admin.productcategorie.index'))->with('success', 'Categoria de Produto atualizada com sucesso!');
+        return redirect(route('admin.productCategories.index'))->with('success', 'Categoria de Produto atualizada com sucesso!');
     }
 
     /**
@@ -113,6 +113,6 @@ class ProductCategorieController extends Controller
     {
         $productcategories = $this->products->find($id);
         $productcategories->delete();
-        return redirect(route('admin.productcategorie.index'))->with('success', 'Produto excluido com sucesso!');
+        return redirect(route('admin.productCategories.index'))->with('success', 'Produto excluido com sucesso!');
     }
 }

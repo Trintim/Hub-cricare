@@ -10,9 +10,10 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
+        'name',
         'image',
         'description',
+        'status',
         'productcategorie_id'
     ];
 
@@ -20,7 +21,8 @@ class Product extends Model
         return $this->belongsTo(Productcategorie::class);
     }
 
-    public function getCreatedAttFormatAttribute(){
-        return $this->created_at->format('d/m/Y');
+    public function getCreatedAtFormatAttribute()
+    {
+        return $this->created_at->format('d/m/y');
     }
 }

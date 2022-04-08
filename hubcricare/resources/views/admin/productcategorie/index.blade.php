@@ -35,8 +35,8 @@
                     <div class="card my-4">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3" style="display: flex;justify-content: space-between; align-items:baseline;">
-                                <h6 class="text-white text-capitalize ps-3">Tabel de Produtos</h6>
-                                <a href="{{ route('admin.produtos.create') }}" class="btn btn-primary" style="margin-right: 1rem !important">Criar novo Projeto</a>
+                                <h6 class="text-white text-capitalize ps-3">Categorias</h6>
+                                <a href="{{ route('admin.productCategories.create') }}" class="btn btn-primary" style="margin-right: 1rem !important">Criar nova Categoria</a>
                             </div>
                         </div>
                         <div class="card-body px-0 pb-2">
@@ -46,14 +46,14 @@
                                     <thead>
                                         <tr>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nome</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Descrição</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Data de Criação</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Slug</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Criado em</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ações</th>
                                             <th class="text-secondary opacity-7"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($products as $product)
+                                        @foreach($productcategories as $productcategorie)
                                         <tr>
                                             <td>
                                                 <div class="d-flex px-2 py-1">
@@ -61,31 +61,23 @@
                                                         <img src="../assets/img/potion1.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
                                                     </div>
                                                     <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">{{$product->name}}</h6>
+                                                        <h6 class="mb-0 text-sm">{{$productcategorie->categorie}}</h6>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="align-middle text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Poção Usada para upgrade de skills</p>
+                                            <td class="align-middle">
+                                                <p class="text-xs font-weight-bold mb-0">{{$productcategorie->categorie_slug}}</p>
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <span class="badge badge-sm bg-gradient-success">Online</span>
+                                                <span class="badge badge-sm bg-gradient-success">{{$productcategorie->created_at}}</span>
                                             </td>
                                             <td class="align-middle text-center">
-                                                <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Editar produto">
-                                                    Editar
-                                                </a>
-                                            </td>
-                                            <td>
                                                 <!-- botao detalhes -->
-                                                <button type="button" title="Detalhes do Produto" class="btn btn-primary" data-toggle="modal" data-target="#modal-detalhes" data-id="{{ $product->id }}"><i class="dripicons-italic"></i></button>
+                                                <button type="button" title="Detalhes do Produto" class="btn btn-primary" data-toggle="modal" data-target="#modal-detalhes" data-id="{{ $productcategorie->id }}"><i class="dripicons-italic"></i></button>
                                                 <!-- botao editar -->
-                                                <a type="button" title="Editar Produto" class="btn btn-warning" href="{{ route('admin.post.edit', $product->id ) }}"><i class="dripicons-pencil"></i></a>
+                                                <a type="button" title="Editar Produto" class="btn btn-warning" href="{{ route('admin.productCategories.edit', $productcategorie->id ) }}"><i class="dripicons-pencil"></i></a>
                                                 <!-- Botao apagar -->
-                                                <button type="button" title="Apagar Produto" class="btn btn-danger" data-toggle="modal" data-target="#modal-excluir" data-id="{{ $product->id }}"><i class="dripicons-trash"></i></button>
+                                                <button type="button" title="Apagar Produto" class="btn btn-danger" data-toggle="modal" data-target="#modal-excluir" data-id="{{ $productcategorie->id }}"><i class="dripicons-trash"></i></button>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -164,7 +156,7 @@
                 var button = $(event.relatedTarget)
                 let modal = $(this)
                 const id = button.data('id')
-                const url = 'projectcategorie/' + id
+                const url = 'productcategorie/' + id
                 $.getJSON(url, (resposta) => {
                 $("#detalhes-categorie").val(resposta[0].categorie);
                 $("#detalhes-categorie_slug").val(resposta[0].categorie_slug);
@@ -174,7 +166,7 @@
         $('#modal-excluir').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             const id = button.data('id')
-            const url = 'projectcategorie/' + id
+            const url = 'productcategorie/' + id
             $.getJSON(url, (resposta) => {
                 let titles = [];
                 for (var i = 0; i < resposta[1].length; i++) {
@@ -183,7 +175,7 @@
                 if (resposta[1].length > 0)
                     $("#excluir-posts").html("Os seguintes posts serão excluidos: " + titles.join(', ') + ".");
             });
-            $('#form-excluir').attr('action', 'projectcategorie/' + id)
+            $('#form-excluir').attr('action', 'productcategorie/' + id)
         })
     });
 </script>

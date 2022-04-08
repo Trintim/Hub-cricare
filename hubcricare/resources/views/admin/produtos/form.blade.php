@@ -14,7 +14,7 @@
     <div class="form-group col-md-12 col-sm-12">
         <label for="description">Descrição:</label>
         <div>
-            <textarea id="description" name="description" class="ckeditor form-control @error('description') is-invalid @enderror" placeholder="Adicione uma descrição" required>{{ isset($product)? $product->description: old('description') }}</textarea>
+            <textarea id="description" name="description" class="ckeditor form-control @error('description') is-invalid @enderror" placeholder="Adiciona uma descrição" required>{{ isset($product)? $product->description: old('description') }}</textarea>
             @error('description')
                 <span class="invalid-feedback" role="alert">
                     <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
@@ -24,13 +24,13 @@
     </div>
 
     <div class="form-group col-md-6">
-        <label for="projectcategorie_id">Categorias para o Projeto:</label>
-        <select id="projectcategorie_id" name="projectcategorie_id" class="form-control" required>
-            <option> ->> Selecione uma Categoria para o Produto<<- </option>
+        <label for="productcategorie_id">Categorias para o Produto:</label>
+        <select id="productcategorie_id" name="productcategorie_id" class="form-control" required>
+            <option> ->> Selecione uma Categoria <<- </option>
             @isset($categories)
                 @foreach ($categories as $categorie)
                     <option
-                        @if(isset($product) && $product->postcategorie_id == $categorie->id)
+                        @if(isset($product) && $product->productcategorie_id == $categorie->id)
                             selected
                         @endif
                         value="{{$categorie->id}}">{{$categorie->categorie}}</option>

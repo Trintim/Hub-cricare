@@ -58,33 +58,28 @@
                                             <td>
                                                 <div class="d-flex px-2 py-1">
                                                     <div>
-                                                        <img src="../assets/img/potion1.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
+                                                        <img src="/storage/{{ $product->image}}" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
                                                     </div>
                                                     <div class="d-flex flex-column justify-content-center">
                                                         <h6 class="mb-0 text-sm">{{$product->name}}</h6>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="align-middle text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Poção Usada para upgrade de skills</p>
+
+                                            <td class="align-middle">
+                                                <p class="text-xs font-weight-bold mb-0">{!! Str::limit($product->description ?? '', 70, '...') !!}</p>
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <span class="badge badge-sm bg-gradient-success">Online</span>
+                                                <span class="badge badge-sm bg-gradient-success">{{$product->status}}</span>
                                             </td>
                                             <td class="align-middle text-center">
-                                                <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
+                                                <span class="text-secondary text-xs font-weight-bold">{{$product->created_at}}</span>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Editar produto">
-                                                    Editar
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <!-- botao detalhes -->
                                                 <button type="button" title="Detalhes do Produto" class="btn btn-primary" data-toggle="modal" data-target="#modal-detalhes" data-id="{{ $product->id }}"><i class="dripicons-italic"></i></button>
-                                                <!-- botao editar -->
-                                                <a type="button" title="Editar Produto" class="btn btn-warning" href="{{ route('admin.post.edit', $product->id ) }}"><i class="dripicons-pencil"></i></a>
-                                                <!-- Botao apagar -->
+                                                    <!-- botao editar -->
+                                                <a type="button" title="Editar Produto" class="btn btn-warning" href="{{ route('admin.produtos.edit', $product->id ) }}"><i class="dripicons-pencil"></i></a>
+                                                    <!-- Botao apagar -->
                                                 <button type="button" title="Apagar Produto" class="btn btn-danger" data-toggle="modal" data-target="#modal-excluir" data-id="{{ $product->id }}"><i class="dripicons-trash"></i></button>
                                             </td>
                                         </tr>
