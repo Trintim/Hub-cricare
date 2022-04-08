@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductCategorieController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\SiteController;
 use App\Mail\HubMail;
@@ -33,6 +34,6 @@ Route::prefix('admin/')->name('admin.')->middleware("auth:web")->group(function 
         return view('admin.home');
     })->name('home');
 
-    Route::resource('/produtos', ProdutoController::class);
-
+    Route::resource('produtos', ProdutoController::class);
+    Route::resource('productCategories', ProductCategorieController::class);
 });

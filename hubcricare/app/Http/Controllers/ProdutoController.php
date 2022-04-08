@@ -2,10 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
+use App\Models\Product;
+use App\Models\Productcategorie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProdutoController extends Controller
 {
+    private $products;
+    private $categories;
+
+    public function __construct(Product $products, Productcategorie $categories)
+    {
+        $this->products = $products;
+        $this->categories = $categories;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +25,8 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        return view('admin.produtos.index');
+        $products = $this->products->all();
+        return view('admin.produtos.index', compact('products'));
     }
 
     /**
@@ -23,7 +36,8 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        $categories = $this->categories->all();
+        return view('admin.produtos.crud', compact('categories'));
     }
 
     /**
@@ -32,9 +46,17 @@ class ProdutoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        $data = $request->all();
+        if($request->hasFile('image')){
+            $data['image'] = $request->file('image')->store('products', 'public');
+        }
+        else{
+            return redirect()->back()->withInput($request->all())->with('danger', 'Insira uma imagem para o produto!');
+        }
+        $this->products->create($data);
+        return redirect(route('admin.produtos.index'))->with('success', 'Produto cadastrado com sucesso!');
     }
 
     /**
@@ -45,7 +67,10 @@ class ProdutoController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = $this->products->find($id);
+        $categorie = $this->categories->where('id', $product->productcategorie_id)->first();
+
+        return json_encode([$product, $categorie]);
     }
 
     /**
@@ -56,7 +81,10 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = $this->products->find($id);
+        $categories = $this->categorie->all();
+
+        return view('admin.produtos.crud', compact('categories'));
     }
 
     /**
@@ -66,9 +94,17 @@ class ProdutoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $product = $this->products->find($id);
+        if($request->hasFile('image')){
+            Storage::delete('public/'.$product->image);
+            $data['image'] = $request->file('image')->store('products', 'public');
+        }
+
+        $this->products->update($data);
+        return redirect(route('admin.produtos.index'))->with('success', 'Produto atualizado com sucesso!');
     }
 
     /**
@@ -79,6 +115,9 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = $this->products->find($id);
+        Storage::delete('public/'.$product->image);
+        $product->delete();
+        return redirect(route('admin.produtos.index'))->with('success', 'Produto excluido com sucesso!');
     }
 }

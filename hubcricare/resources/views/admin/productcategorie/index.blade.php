@@ -1,14 +1,14 @@
 @extends('layout.admin')
 
-@section('title', 'Produtos | admin')
+@section('title', 'Categorias | admin')
 
 @section('style')
 
-<!-- DataTables -->
-<link href="{{ asset('assets/sistema/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('assets/sistema/datatables/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-<!-- Responsive datatable -->
-<link href="{{ asset('assets/sistema/datatables/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+    <!-- DataTables -->
+    <link href="{{ asset('assets/sistema/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/sistema/datatables/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable -->
+    <link href="{{ asset('assets/sistema/datatables/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 
 @endsection
 
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Produtos</h4>
+                    <h4 class="page-title">Categorias de Projetos</h4>
                 </div>
             </div>
         </div>
@@ -97,56 +97,18 @@
                 </div>
             </div>
         </div>
-
         <!-- end row -->
-
-        <!-- Modal Detalhes -->
-        <div id="modal-detalhes" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Detalhes do Projeto</h5>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-
-                            <div class="form-group col-md-12 col-sm-12">
-                                <label for="name">Título</label>
-                                <input type="text" id="detalhes-name" name="detalhes-name" class="form-control" readonly>
-                            </div>
-
-                            <div class="form-group col-md-12 col-sm-12">
-                                <label for="keywords">Categoria</label>
-                                <input id="detalhes-categorie" name="detalhes-categorie" class="form-control" readonly>
-                            </div>
-
-                            <div class="form-group col-md-6 col-sm-12">
-                                <label for="description">Descrição</label>
-                                <p type="text" style="word-break: break-all" id="detalhes-description" name="detalhes-description" class="form-control" readonly></p>
-                            </div>
-
-                            <div class="form-group col-md-6 col-sm-12">
-                                <label for="image">Imagem</label>
-                                <div><img id="detalhes-image" alt="image" style="max-height: 275px; max-width: 220px; object-fit: cover;"></div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" data-dismiss="modal">Fechar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Modal excluir -->
         <div id="modal-excluir" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title col-12 text-dark" id="postModalLabel">Confirmação</h5>
+                        <h5 class="modal-title col-12 text-dark" id="exampleModalLabel">Confirmação</h5>
                     </div>
-                    <div class="modal-body" align="center">Tem certeza de que quer excluir esse Produto?</div>
+                    <div class="modal-body" align="center">Tem certeza de que quer excluir essa Categoria?
+                        <div id="excluir-posts" class="modal-body" align="center" style="color: red; font-weight: 700;"></div>
+                    </div>
                     <div class="modal-footer">
                         <form id="form-excluir" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -168,55 +130,61 @@
 
 @section('script')
 
-<!-- Required datatable js -->
-<script src="{{ asset('assets/sistema/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('assets/sistema/datatables/dataTables.bootstrap4.min.js') }}"></script>
-<!-- Buttons examples -->
-<script src="{{ asset('assets/sistema/datatables/dataTables.buttons.min.js') }}"></script>
-<script src="{{ asset('assets/sistema/datatables/buttons.bootstrap4.min.js') }}"></script>
-<!-- Responsive examples -->
-<script src="{{ asset('assets/sistema/datatables/dataTables.responsive.min.js') }}"></script>
-<script src="{{ asset('assets/sistema/datatables/responsive.bootstrap4.min.js') }}"></script>
+    <!-- Required datatable js -->
+    <script src="{{ asset('assets/sistema/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/sistema/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <!-- Buttons examples -->
+    <script src="{{ asset('assets/sistema/datatables/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets/sistema/datatables/buttons.bootstrap4.min.js') }}"></script>
+    <!-- Responsive examples -->
+    <script src="{{ asset('assets/sistema/datatables/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/sistema/datatables/responsive.bootstrap4.min.js') }}"></script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        var table = $('.datatable').DataTable({
-            "language": {
-                "sProcessing": "Aguarde enquanto os dados são carregados ...",
-                "sLengthMenu": "Mostrar _MENU_ registros por pagina",
-                "sZeroRecords": "Nenhum registro correspondente ao criterio encontrado",
-                "sInfoEmtpy": "Exibindo 0 a 0 de 0 registros",
-                "sInfo": "Exibindo de _START_ a _END_ de _TOTAL_ registros",
-                "sInfoFiltered": "",
-                "sSearch": "Procurar",
-                "oPaginate": {
-                    "sFirst": "Primeiro",
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var table = $('.datatable').DataTable({
+                "language": {
+                    "sProcessing": "Aguarde enquanto os dados são carregados ...",
+                    "sLengthMenu": "Mostrar _MENU_ registros por pagina",
+                    "sZeroRecords": "Nenhum registro correspondente ao criterio encontrado",
+                    "sInfoEmtpy": "Exibindo 0 a 0 de 0 registros",
+                    "sInfo": "Exibindo de _START_ a _END_ de _TOTAL_ registros",
+                    "sInfoFiltered": "",
+                    "sSearch": "Procurar",
+                    "oPaginate": {
+                    "sFirst":    "Primeiro",
                     "sPrevious": "Anterior",
-                    "sNext": "Próximo",
-                    "sLast": "Último"
+                    "sNext":     "Próximo",
+                    "sLast":     "Último"
+                    }
                 }
-            }
-        });
-        /* js para abrir Modal de Detalhes de forma dinâmica com as informações desejadas */
-        $('#modal-detalhes').on('show.bs.modal', function(event) {
-            var button = $(event.relatedTarget)
-            let modal = $(this)
-            const id = button.data('id')
-            const url = 'produtos/' + id
-            $.getJSON(url, (resposta) => {
-                $("#detalhes-name").val(resposta[0].name);
-                $("#detalhes-description").html(resposta[0].description);
-                $('#detalhes-image').attr('src', '/storage/' + resposta[0].image);
-                $("#detalhes-categorie").val(resposta[1].categorie);
             });
-        })
-        /* js para abrir Modal de excluir de forma dinâmica */
+            /* js para abrir Modal de Detalhes de forma dinâmica com as informações desejadas */
+            $('#modal-detalhes').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget)
+                let modal = $(this)
+                const id = button.data('id')
+                const url = 'projectcategorie/' + id
+                $.getJSON(url, (resposta) => {
+                $("#detalhes-categorie").val(resposta[0].categorie);
+                $("#detalhes-categorie_slug").val(resposta[0].categorie_slug);
+            });
+            })
+            /* js para abrir Modal de excluir de forma dinâmica */
         $('#modal-excluir').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             const id = button.data('id')
-            $('#form-excluir').attr('action', 'produtos/' + id)
+            const url = 'projectcategorie/' + id
+            $.getJSON(url, (resposta) => {
+                let titles = [];
+                for (var i = 0; i < resposta[1].length; i++) {
+                    titles.push(resposta[1][i].title)
+                }
+                if (resposta[1].length > 0)
+                    $("#excluir-posts").html("Os seguintes posts serão excluidos: " + titles.join(', ') + ".");
+            });
+            $('#form-excluir').attr('action', 'projectcategorie/' + id)
         })
     });
 </script>
-
 @endsection

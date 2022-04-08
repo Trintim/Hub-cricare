@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('title', 'Projetos | Admin')
+@section('title', 'Produtos | Admin')
 
 @section('content')
 
@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Projetos</h4>
+                    <h4 class="page-title">Produtos</h4>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="card-box table-responsive">
-                    @if (isset($portfolio))
+                    @if (isset($product))
                         <h4 class="m-t-0 header-title"><b>Editar Projeto</b></h4>
                         <p class="text-muted font-14 m-b-30">
                             Formulário para edição do Projeto.
@@ -34,23 +34,23 @@
 
                     @endif
 
-                    <form id="form-portfolio" method="POST" action=" {{ isset($portfolio) ? route("admin.portfolio.update", $portfolio->id) : route("admin.portfolio.store")}} " enctype="multipart/form-data">
+                    <form id="form-product" method="POST" action=" {{ isset($product) ? route("admin.produtos.update", $product->id) : route("admin.produtos.store")}} " enctype="multipart/form-data">
 
                         @csrf
-                        @isset($portfolio)
+                        @isset($product)
                             @method("PUT")
                         @else
                             @method("post")
                         @endisset
 
-                        @component('admin.portfolio.form', [ "portfolio" => isset($portfolio) ? $portfolio : null, "categories" => $categories ])
+                        @component('admin.produtos.form', [ "product" => isset($product) ? $product : null, "categories" => $categories ])
                         @endcomponent
 
                     </form>
 
                     <div class="d-flex justify-content-end mt-3">
-                        <button type="submit" form="form-portfolio" class="btn btn-success mr-2">Salvar</button>
-                        <a href=" {{ route('admin.portfolio.index') }}" class="btn btn-secondary">Voltar</a>
+                        <button type="submit" form="form-product" class="btn btn-success mr-2">Salvar</button>
+                        <a href=" {{ route('admin.produtos.index') }}" class="btn btn-secondary">Voltar</a>
                     </div>
                 </div>
             </div>
