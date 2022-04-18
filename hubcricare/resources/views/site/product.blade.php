@@ -1,4 +1,4 @@
-@extends('layout.site', ['status' => 1])
+@extends('layout.site')
 
 @section('title', 'Hub do Cricaré')
 

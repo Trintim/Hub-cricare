@@ -1,4 +1,4 @@
-@extends('layout.site', ['status' => 0])
+@extends('layout.site')
 
 @section('title', 'Hub do Cricaré')
 
@@ -38,7 +38,7 @@
 
                 @for ($i = (count($products)-1); $i >= 0; $i--)
                 @foreach ($products as $status => $product)
-                @if($status == 1)
+                @if(!$status)
                 <div class="col-lg-4 col-md-6 portfolio-item filter-{{$products[$i]->productcategorie_id}}">
                     <div class="portfolio-wrap">
                         <img src="{{ url('storage/' . $products[$i]->image) }}" class="img-fluid" alt="">
