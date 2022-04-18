@@ -77,7 +77,7 @@
                                                 @endif
                                             </td>
                                             <td class="align-middle text-center">
-                                                <span class="text-secondary text-xs font-weight-bold">{{$product->created_at->format('d/m/Y')}}</span>
+                                                <span class="text-secondary text-xs font-weight-bold">{{$product->created_at->locale('pt-BR')->translatedFormat('d F Y')}}</span>
                                             </td>
                                             <td class="align-middle">
                                                 @if ($product->status)

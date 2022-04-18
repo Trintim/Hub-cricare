@@ -50,7 +50,7 @@
                             @endif
                             @endforeach
                             <div class="portfolio-links">
-                                <a href="" title="More Details"><i class="bx bx-plus"></i></a>
+                                <a href="{{ route('site.product', $products[$i]->id) }}" title="More Details"><i class="bx bx-plus"></i></a>
                             </div>
                         </div>
                     </div>

@@ -66,7 +66,7 @@
                                                 <p class="text-xs font-weight-bold mb-0">{{$productcategorie->categorie_slug}}</p>
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <span class="badge badge-sm bg-gradient-success">{{$productcategorie->created_at->format('d/m/Y')}}</span>
+                                                <span class="badge badge-sm bg-gradient-success">{{$productcategorie->created_at->locale('pt-BR')->translatedFormat('d F Y')}}</span>
                                             </td>
                                             <td class="align-middle text-center">
                                                 <!-- botao detalhes -->
