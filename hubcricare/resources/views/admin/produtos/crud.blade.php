@@ -21,17 +21,16 @@
         <div class="row">
             <div class="col-12">
                 <div class="card-box table-responsive">
-                    @if (isset($products))
+                    @if (isset($product))
                         <h4 class="m-t-0 header-title"><b>Editar Produto</b></h4>
                         <p class="text-muted font-14 m-b-30">
                             Formulário para edição do Produto.
                         </p>
-                        @else
-                            <h4 class="m-t-0 header-title"><b>Criar novo Produto</b></h4>
-                            <p class="text-muted font-14 m-b-30">
+                    @else
+                        <h4 class="m-t-0 header-title"><b>Criar novo Produto</b></h4>
+                        <p class="text-muted font-14 m-b-30">
                                 Formulário para criar um novo Produto.
-                            </p>
-
+                        </p>
                     @endif
 
                     <form id="form-produtos" method="POST" action=" {{ isset($product) ? route("admin.produtos.update", $product->id) : route("admin.produtos.store")}} " enctype="multipart/form-data">

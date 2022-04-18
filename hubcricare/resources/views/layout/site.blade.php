@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title> Hub do Cricaré</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <title>@yield('title')</title>
 
     <!-- Favicons -->
-    <link href="assets/img/icon.png" rel="icon">
-    <link href="assets/img/icon.png" rel="apple-touch-icon">
+    <link href="{{asset('assets/img/logo.png')}}" rel="icon">
+    <link href="{{asset('assets/img/logo.png')}}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
     <!-- Template Main CSS File -->
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" />
-
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css" />
+    @yield('style')
     <!-- =======================================================
   * Template Name: Gp - v4.6.0
   * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
@@ -46,7 +45,7 @@
 
             <!-- <h1 class="logo me-auto me-lg-0"><a href="">HUB do Cricaré.</a></h1> -->
             <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="/" class="logo me-auto me-lg-0"><img src="assets/img/logo3.png" alt="" class="img-fluid"></a>
+            <a href="/" class="logo me-auto me-lg-0"><img src="{{asset('assets/img/logo3.png')}}" alt="" class="img-fluid"></a>
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
@@ -67,7 +66,9 @@
     </header>
 
 
-    @yield('content')
+    <div id="content" class="@if (!$status) site-content @endif">
+        @yield('content')
+    </div>
 
 
     <!-- ======= Footer ======= -->
@@ -110,43 +111,6 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <!-- <div class="col-md-7 ms-auto footer-links">
-                        <div class="row site-section pt-0">
-                            <div class="col-md-4 mb-4 mb-md-0">
-                                <h3>Navegação</h3>
-                                <ul class="list-unstyled">
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#about">Sobre Nós</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#services">Serviços</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#clients">Clientes</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#clients">Parceiros</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#team">Perguntas</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4 mb-4 mb-md-0">
-                                <h3>Serviços</h3>
-                                <ul class="list-unstyled">
-                                    <br>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#services">Serviços Corporativos</a></li><br>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#services">Assessoria Juridica</a></li><br>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#services">Plataformas Educacionais</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4 mb-4 mb-md-0">
-                                <h3></h3>
-                                <ul class="list-unstyled">
-                                    <br><br>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#services">Gerenciamento de Transmissões</a></li>
-                                    <br>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#services">Marketing Digital</a></li><br>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#services">Servidores</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
         </div>
@@ -170,42 +134,20 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/purecounter/purecounter.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>
+    <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
+    <script src="{{asset('assets/vendor/purecounter/purecounter.js')}}"></script>
+    <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script>
-        $("#btn-mensagem").click(function() {
-            $("#modal-mensagem").modal();
-        });
-    </script>
-    <script>
-        var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-        var alertTrigger = document.getElementById('liveAlertBtn')
-
-        function alert(message, type) {
-            var wrapper = document.createElement('div')
-            wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
-
-            alertPlaceholder.append(wrapper)
-        }
-
-        if (alertTrigger) {
-            alertTrigger.addEventListener('click', function() {
-                alert('Obrigado, recebemos sua mensagem com sucesso!', 'success')
-            })
-        }
-    </script>
-
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-
+    <script src="{{asset('assets/js/main.js')}}"></script>
+    @yield('script')
 </body>
 
 </html>

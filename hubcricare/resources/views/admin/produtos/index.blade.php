@@ -36,7 +36,7 @@
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3" style="display: flex;justify-content: space-between; align-items:baseline;">
                                 <h6 class="text-white text-capitalize ps-3">Tabel de Produtos</h6>
-                                <a href="{{ route('admin.produtos.create') }}" class="btn btn-primary" style="margin-right: 1rem !important">Criar novo Projeto</a>
+                                <a href="{{ route('admin.produtos.create') }}" class="btn btn-primary" style="margin-right: 1rem !important">Criar novo Produto</a>
                             </div>
                         </div>
                         <div class="card-body px-0 pb-2">
@@ -70,16 +70,25 @@
                                                 <p class="text-xs font-weight-bold mb-0">{!! Str::limit($product->description ?? '', 70, '...') !!}</p>
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <span class="badge badge-sm bg-gradient-success">{{$product->status}}</span>
+                                                @if ($product->status)
+                                                    <span class="badge badge-sm bg-gradient-success">{{$product->status}}</span>
+                                                @else
+                                                    <span class="badge badge-sm bg-gradient-danger">{{$product->status}}</span>
+                                                @endif
                                             </td>
                                             <td class="align-middle text-center">
-                                                <span class="text-secondary text-xs font-weight-bold">{{$product->created_at}}</span>
+                                                <span class="text-secondary text-xs font-weight-bold">{{$product->created_at->format('d/m/Y')}}</span>
                                             </td>
                                             <td class="align-middle">
-                                                <button type="button" title="Detalhes do Produto" class="btn btn-primary" data-toggle="modal" data-target="#modal-detalhes" data-id="{{ $product->id }}"><i class="dripicons-italic"></i></button>
-                                                    <!-- botao editar -->
+                                                @if ($product->status)
+                                                    <a title="Desativar" class="btn btn-danger" href="{{ route('admin.produtos.state', $product->id) }}"><i class="dripicons-power"></i></a>
+                                                @else
+                                                    <a title="Ativar" class="btn btn-success" href="{{ route('admin.produtos.state', $product->id) }}"><i class="dripicons-checkmark"></i></a>
+                                                @endif
+                                                <button type="button" title="Detalhes do Produto" class="btn btn-info" data-toggle="modal" data-target="#modal-detalhes" data-id="{{ $product->id }}"><i class="dripicons-italic"></i></button>
+                                                <!-- botao editar -->
                                                 <a type="button" title="Editar Produto" class="btn btn-warning" href="{{ route('admin.produtos.edit', $product->id ) }}"><i class="dripicons-pencil"></i></a>
-                                                    <!-- Botao apagar -->
+                                                <!-- Botao apagar -->
                                                 <button type="button" title="Apagar Produto" class="btn btn-danger" data-toggle="modal" data-target="#modal-excluir" data-id="{{ $product->id }}"><i class="dripicons-trash"></i></button>
                                             </td>
                                         </tr>
@@ -100,13 +109,13 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Detalhes do Projeto</h5>
+                        <h5 class="modal-title">Detalhes do Produto</h5>
                     </div>
                     <div class="modal-body">
                         <div class="row">
 
                             <div class="form-group col-md-12 col-sm-12">
-                                <label for="name">Título</label>
+                                <label for="name">Nome</label>
                                 <input type="text" id="detalhes-name" name="detalhes-name" class="form-control" readonly>
                             </div>
 

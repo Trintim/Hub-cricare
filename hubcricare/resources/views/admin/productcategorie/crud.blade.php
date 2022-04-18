@@ -26,11 +26,11 @@
                         <p class="text-muted font-14 m-b-30">
                             Formulário para editar categoria.
                         </p>
-                        @else
-                            <h4 class="m-t-0 header-title"><b>Criar nova Categoria</b></h4>
-                            <p class="text-muted font-14 m-b-30">
-                                Formulário para criar nova categoria.
-                            </p>
+                    @else
+                        <h4 class="m-t-0 header-title"><b>Criar nova Categoria</b></h4>
+                        <p class="text-muted font-14 m-b-30">
+                            Formulário para criar nova categoria.
+                        </p>
                     @endif
 
                     <form id="form-productcategorie" method="POST" action=" {{ isset($productcategorie) ? route("admin.productCategories.update", $productcategorie->id) : route("admin.productCategories.store")}} " enctype="multipart/form-data">

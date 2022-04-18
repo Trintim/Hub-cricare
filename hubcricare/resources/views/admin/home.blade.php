@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Bem Vindo</h4>
+                    <h4 class="page-title">Seja bem vindo {{$user->name}}</h4>
                 </div>
             </div>
         </div>

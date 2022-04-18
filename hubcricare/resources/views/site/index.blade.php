@@ -1,7 +1,7 @@
-@extends('layout.site')
+@extends('layout.site', ['status' => 0])
 
 @section('title')
-    Hub do Cricaré
+Hub do Cricaré
 @endsection
 
 @section('content')
@@ -162,105 +162,58 @@
             </div>
 
             <div class="row">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                        <h4><a href="">Lorem Ipsum</a></h4>
+                        <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                    </div>
+                </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="card">
-                        <div class="content">
-                            <div class="front">
-                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/servicos.jpg') }}" alt="Imagem drone">
-                            </div>
-                            <div class="back">
-                                <div class="icon-back">
-                                    <p>Aluguel de Impressoras e Projetores, Telefonia Via IP, Mapeamento de Drones, Tour Virtual e Manutenção de computadores</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bx-file"></i></div>
+                        <h4><a href="">Sed ut perspiciatis</a></h4>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="card">
-                        <div class="content">
-                            <div class="front">
-                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/plataforma.jpg') }}" alt="Imagem drone">
-                            </div>
-                            <div class="back">
-                                <div class="icon-back">
-                                    <p>Moodle (Instalação, Customização Ava), Revistas Eletrônicas OJS, Repositório Institucional e Processo de Digitação de Arquivos</p>
-                                </div>
-                            </div>
-                        </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bx-tachometer"></i></div>
+                        <h4><a href="">Magni Dolores</a></h4>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-4" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="card">
-                        <div class="content">
-                            <div class="front">
-                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/gerenciamento.jpg') }}" alt="Imagem drone">
-                            </div>
-                            <div class="back">
-                                <div class="icon-back">
-                                    <p>Gestão de Lives, OBS Studio, YouTube, Facebook e Instagram</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="card">
-                        <div class="content">
-                            <div class="front">
-                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/assessoria.jpg') }}" alt="Imagem drone">
-                            </div>
-                            <div class="back">
-                                <div class="icon-back">
-                                    <p>Segurança Jurídica para seu Negócio, Disputas Judiciais, Divisão Societária, Problemas com contrato, entre outros tipos de serviços Jurídicos.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="card">
-                        <div class="content">
-                            <div class="front">
-                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/marketing.jpg') }}" alt="Desenvolvimento">
-                            </div>
-                            <div class="back">
-                                <div class="icon-back">
-                                    <p>Gerenciamento de Mídia Social, Desenvolvimento de Sites, Criação e Edição de Vídeos Institucionais, Trafego Pago e Material Gráfico</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="card">
-                        <div class="content">
-                            <div class="front">
-                                <img style="width: 100%; height: 100%;" src="{{ asset('assets/img/implantacao.jpg') }}" alt="Servidor">
-                            </div>
-                            <div class="back">
-                                <div class="icon-back">
-                                    <p>Implantação de Servidores Linux, Windows Server e Apache</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bx-world"></i></div>
+                        <h4><a href="">Nemo Enim</a></h4>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                     </div>
                 </div>
 
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bx-slideshow"></i></div>
+                        <h4><a href="">Dele cardo</a></h4>
+                        <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bx-arch"></i></div>
+                        <h4><a href="">Divera don</a></h4>
+                        <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+                    </div>
+                </div>
 
             </div>
 
         </div>
-    </section>
-
-    </div>
-    </div>
-
-    </div>
-    </section>
-
-
+    </section><!-- End Services Section -->
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
@@ -352,77 +305,45 @@
     </section>
     <!-- End Team Section -->
 
-    <section id="team" class="team">
-        <div class="container aos-init aos-animate" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Equipe</h2>
-                <p>Nossos membros</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-                        <div class="member-img"> <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Victor Trintim</h4> <span>Desenvolvedor Web</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                        <div class="member-img"> <img src="assets/img/vitor.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Victor Trintim</h4> <span>Desenvolvedor Web</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-                        <div class="member-img"> <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Victor Trintim</h4> <span>Desenvolvedor Web</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-                        <div class="member-img"> <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Victor Trintim</h4> <span>Desenvolvedor Web</span>
-                        </div>
-                    </div>
-                </div>
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+        <div class="container" data-aos="fade-up">
 
+            <div class="section-title">
+                <h2>Produtos</h2>
+                <p>Nossos Produtos</p>
+            </div>
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                @for ($i = (count($products)-1); $i >= (count($products) - ((count($products)>=3) ? 3 : count($products))); $i--)
+                @foreach ($products as $status => $product)
+                @if ($status == 1)
+                <div class="col-lg-4 col-md-6 portfolio-item">
+                    <div class="portfolio-wrap">
+                        <img src="{{ url('storage/' . $products[$i]->image) }}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>{{$products[$i]->name}}</h4>
+                            @foreach ($categories as $categorie)
+                            @if ($categorie->id == $products[$i]->productcategorie_id)
+                            <p>{!! $categorie->categorie !!}</p>
+                            @endif
+                            @endforeach
+                            <div class="portfolio-links">
+                                <a href="{{ route('site.product', $products[$i]->id) }}" title="More Details"><i class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endif
+                @endforeach
+                @endfor
+            </div>
+            <div style="display: flex; align-items: center; justify-content:center; padding:30px 30px 0 30px;">
+                <a class="btn btn-product" href="{{ route('site.produtos') }}" role="button">Veja Mais</a>
             </div>
         </div>
-    </section>
+    </section><!-- End Portfolio Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -463,7 +384,6 @@
                 <div class="col-lg-8 mt-5 mt-lg-0" style="margin-bottom: 20px;">
                     <form action="{{ route('site.contato') }}" method="POST" role="form" enctype="multipart/form-data">
                         @csrf
-                        <div id="liveAlertPlaceholder"></div>
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <input type="text" name="name" class="form-control" id="name" placeholder="Nome" required>

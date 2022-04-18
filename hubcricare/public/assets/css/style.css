@@ -171,9 +171,26 @@ h6 {
 }
 
 
+
 /*--------------------------------------------------------------
 #  Get Startet Button
 --------------------------------------------------------------*/
+.btn-product{
+    padding: 8px 50px;
+    font-size: 18px;
+    background: #35ecbe;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    box-shadow: 0 0 1em #4cb993c1;
+    border-radius: 7px;
+}
+
+.btn-product:hover{
+    background: #35ecbea5;
+    box-shadow: 0 0 1em #4cb993c1;
+    border-radius: 7px;
+}
 
 .get-started-btn {
     color: #fff;
@@ -870,7 +887,7 @@ section {
 .cta {
     background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/cta-bg.jpg") fixed center center;
     background-size: cover;
-    padding: 60px 0;
+    padding: 120px 0;
 }
 
 .cta h3 {
@@ -1754,3 +1771,4 @@ section {
         display: none;
     }
 }
+
