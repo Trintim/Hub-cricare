@@ -50,9 +50,9 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="#about">Sobre Nós</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Serviços</a></li>
                     <li><a class="nav-link scrollto " href="#clients">Clientes</a></li>
-                    <li><a class="nav-link scrollto" href="#clients">Parceiros</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Serviços</a></li>
+                    <li><a class="nav-link scrollto" href="#portfolio">Produtos</a></li>
                     <li><a class="nav-link scrollto" href="#team">Perguntas</a></li>
 
                 </ul>
@@ -65,11 +65,7 @@
         </div>
     </header>
 
-
-    <div id="content" class="@if (!$status) site-content @endif">
-        @yield('content')
-    </div>
-
+    @yield('content')
 
     <!-- ======= Footer ======= -->
     <footer id="footer">

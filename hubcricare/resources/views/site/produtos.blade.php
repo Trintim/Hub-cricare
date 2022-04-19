@@ -37,26 +37,28 @@
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
                 @for ($i = (count($products)-1); $i >= 0; $i--)
-                @foreach ($products as $status => $product)
-                @if(!$status)
-                <div class="col-lg-4 col-md-6 portfolio-item filter-{{$products[$i]->productcategorie_id}}">
-                    <div class="portfolio-wrap">
-                        <img src="{{ url('storage/' . $products[$i]->image) }}" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>{{$products[$i]->name}}</h4>
-                            @foreach ($categories as $categorie)
-                            @if ($categorie->id == $products[$i]->productcategorie_id)
-                            <p>{!! $categorie->categorie !!}</p>
-                            @endif
-                            @endforeach
-                            <div class="portfolio-links">
-                                <a href="{{ route('site.product', $products[$i]->id) }}" title="More Details"><i class="bx bx-plus"></i></a>
+                    @foreach ($products as $status => $product)
+                        @if(!$status)
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-{{$products[$i]->productcategorie_id}}">
+                                <div class="portfolio-wrap">
+                                    <img src="{{ url('storage/' . $products[$i]->image) }}" class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                        <a href="{{ route('site.product', $products[$i]->id) }}" title="Mais Detalhes">
+                                            <h4>{{$products[$i]->name}}</h4>
+                                            @foreach ($categories as $categorie)
+                                                @if ($categorie->id == $products[$i]->productcategorie_id)
+                                                    <p>{!! $categorie->categorie !!}</p>
+                                                @endif
+                                            @endforeach
+                                            <div class="portfolio-links">
+                                                <a href="{{ route('site.product', $products[$i]->id) }}" title="Mais Detalhes"><i class="bx bx-plus"></i></a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                @endif
-                @endforeach
+                        @endif
+                    @endforeach
                 @endfor
             </div>
 

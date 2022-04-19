@@ -32,7 +32,7 @@
                     <div class="swiper-pagination"></div>
                 </div>
                 <div style="display: flex; align-items: center; justify-content:center; padding: 20px 0;">
-                    <a class="btn btn-product" href="https://api.whatsapp.com/send?phone=5527998028696&text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20valores%20de%20determinado%20produto..." role="button">Para Saber Valores Clique Aqui</a>
+                    <a class="btn btn-product" href="https://api.whatsapp.com/send?phone=5527998028696&text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20valores%20de%20determinado%20produto..." role="button">Solicite um Orçamento</a>
                 </div>
             </div>
 
@@ -42,7 +42,7 @@
                     <h3>Informações do Produto</h3>
                     <ul>
                         <li><strong>Categoria</strong>: {{$categorie->categorie}}</li>
-                        <li><strong>Project date</strong>: {{$product->created_at->locale('pt-BR')->translatedFormat('d F Y')}}</li>
+                        <li><strong>Data de Inclusão do Produto</strong>: {{$product->created_at->locale('pt-BR')->translatedFormat('d F Y')}}</li>
                     </ul>
                 </div>
                 <div class="portfolio-description">

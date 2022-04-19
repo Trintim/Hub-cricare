@@ -327,15 +327,17 @@ Hub do Cricaré
                                 <div class="portfolio-wrap">
                                     <img src="{{ url('storage/' . $products[$i]->image) }}" class="img-fluid" alt="">
                                     <div class="portfolio-info">
-                                        <h4>{{$products[$i]->name}}</h4>
-                                        @foreach ($categories as $categorie)
-                                        @if ($categorie->id == $products[$i]->productcategorie_id)
-                                        <p>{!! $categorie->categorie !!}</p>
-                                        @endif
-                                        @endforeach
-                                        <div class="portfolio-links">
-                                            <a href="{{ route('site.product', $products[$i]->id) }}" title="More Details"><i class="bx bx-plus"></i></a>
-                                        </div>
+                                        <a href="{{ route('site.product', $products[$i]->id) }}" title="Mais Detalhes">
+                                            <h4>{{$products[$i]->name}}</h4>
+                                            @foreach ($categories as $categorie)
+                                                @if ($categorie->id == $products[$i]->productcategorie_id)
+                                                    <p>{!! $categorie->categorie !!}</p>
+                                                @endif
+                                            @endforeach
+                                            <div class="portfolio-links">
+                                                <a href="{{ route('site.product', $products[$i]->id) }}" title="Mais Detalhes"><i class="bx bx-plus"></i></a>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
