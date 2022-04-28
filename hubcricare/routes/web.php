@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\ProductCategorieController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\SiteController;
@@ -32,6 +33,7 @@ Route::prefix('admin/')->name('admin.')->middleware("auth:web")->group(function 
     Route::get('/', [DashboardController::class, 'index'])->name('home');
 
     Route::resource('produtos', ProdutoController::class);
+    Route::resource('funcionarios', FuncionarioController::class);
     Route::resource('productCategories', ProductCategorieController::class);
     Route::get('produtos/{id}/state', [ProdutoController::class, 'stateUpdate'])->name('produtos.state');
     Route::resource('user', UserController::class);
