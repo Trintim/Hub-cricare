@@ -13,7 +13,7 @@ class FuncionarioRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -26,9 +26,8 @@ class FuncionarioRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'min:3', 'max:50'],
             'email' => ['required', 'email', 'max:255'],
-            'whatsapp' => ['required', 'min:12'],
+            'phone' => ['required', 'max:13'],
             'dt_nasc' => ['required'],
-            'image' => ['required'],
             'setor' => ['required', 'min:5'],
         ];
     }
@@ -41,8 +40,8 @@ class FuncionarioRequest extends FormRequest
             'name.max' => "O campo :attribute deve ter no maximo 50 Caracteres",
             'email.email' => "O campo de :attribute acima não contém um endereço de email válido",
             'email.max' => "O :attribute deve ter no máximo 255 caracteres",
-            'whatsapp.required' => "O :attribute deve ser informado",
-            'image.required' => "A :attribute deve ser em um formato valido"
+            'phone.required' => "O :attribute deve ser informado",
+            'phone.max' => "O campo :attribute deve ter no maximo 13 Caracteres",
         ];
     }
 }

@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('title', 'Produtos | Admin')
+@section('title', 'Funcionários | Admin')
 
 @section('content')
 
@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Produtos</h4>
+                    <h4 class="page-title">Funcionários</h4>
                 </div>
             </div>
         </div>
@@ -21,35 +21,35 @@
         <div class="row">
             <div class="col-12">
                 <div class="card-box table-responsive">
-                    @if (isset($product))
-                        <h4 class="m-t-0 header-title"><b>Editar Produto</b></h4>
+                    @if (isset($funcionario))
+                        <h4 class="m-t-0 header-title"><b>Editar Funcionários</b></h4>
                         <p class="text-muted font-14 m-b-30">
-                            Formulário para edição do Produto.
+                            Formulário para edição do Funcionário.
                         </p>
                     @else
-                        <h4 class="m-t-0 header-title"><b>Criar novo Produto</b></h4>
+                        <h4 class="m-t-0 header-title"><b>Criar novo Funcionário</b></h4>
                         <p class="text-muted font-14 m-b-30">
-                                Formulário para criar um novo Produto.
+                            Formulário para criar um novo Funcionário.
                         </p>
                     @endif
 
-                    <form id="form-produtos" method="POST" action=" {{ isset($product) ? route("admin.produtos.update", $product->id) : route("admin.produtos.store")}} " enctype="multipart/form-data">
+                    <form id="form-funcionarios" method="POST" action=" {{ isset($funcionario) ? route("admin.funcionarios.update", $funcionario->id) : route("admin.funcionarios.store")}} " enctype="multipart/form-data">
 
                         @csrf
-                        @isset($product)
+                        @isset($funcionario)
                             @method("PUT")
                         @else
                             @method("post")
                         @endisset
 
-                        @component('admin.produtos.form', [ "product" => isset($product) ? $product : null, "categories" => $categories ])
+                        @component('admin.funcionarios.form', [ "funcionario" => isset($funcionario) ? $funcionario : null])
                         @endcomponent
 
                     </form>
 
                     <div class="d-flex justify-content-end mt-3">
-                    <button type="submit" form="form-produtos" class="btn btn-success mr-2">Salvar</button>
-                        <a href=" {{ route('admin.produtos.index') }}" class="btn btn-secondary">Voltar</a>
+                    <button type="submit" form="form-funcionarios" class="btn btn-success mr-2">Salvar</button>
+                        <a href=" {{ route('admin.funcionarios.index') }}" class="btn btn-secondary">Voltar</a>
                     </div>
                 </div>
             </div>
@@ -64,4 +64,8 @@
 
 @section('style')
 
+@endsection
+
+@section('script')
+    @yield('script')
 @endsection

@@ -48,6 +48,8 @@ class FuncionarioController extends Controller
     public function store(FuncionarioRequest $request)
     {
         $datas = $request->all();
+        $phone = preg_replace('/[^0-9]/', '', $datas['phone']);
+        $datas['phone'] = '+' . $phone;
         if($request->hasFile('image')){
             $datas['image'] = $request->file('image')->store('funcionarios', 'public');
         } else{
@@ -55,7 +57,7 @@ class FuncionarioController extends Controller
         }
 
         $this->funcionarios->create($datas);
-        return redirect(route('admin.produtos.index'))->with('success', 'Funcionario cadastrado com sucesso');
+        return redirect(route('admin.funcionarios.index'))->with('success', 'Funcionario cadastrado com sucesso');
     }
 
     /**
@@ -79,7 +81,7 @@ class FuncionarioController extends Controller
     public function edit($id)
     {
         $funcionario = $this->funcionarios->find($id);
-        return view('admin.funcionarios.crud');
+        return view('admin.funcionarios.crud', compact('funcionario'));
     }
 
     /**
@@ -93,13 +95,17 @@ class FuncionarioController extends Controller
     {
         $datas = $request->all();
         $funcionario = $this->funcionarios->find($id);
+
+        $phone = preg_replace('/[^0-9]/', '', $datas['phone']);
+        $datas['phone'] = '+' . $phone;
+
         if($request->hasFile('image')){
             Storage::delete('public/'.$funcionario->image);
-            $datas['image'] = $request->file('image')->store('funcionario');
+            $datas['image'] = $request->file('image')->store('funcionario', 'public');
         }
 
-        $this->funcionarios->create($datas);
-        return redirect(route('admin.produtos.index'))->with('success', 'Funcionario atualizado com sucesso');
+        $funcionario->update($datas);
+        return redirect(route('admin.funcionarios.index'))->with('success', 'Funcionario atualizado com sucesso');
     }
 
     /**

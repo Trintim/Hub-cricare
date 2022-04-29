@@ -105,6 +105,10 @@
                             <a href=" {{route('admin.productCategories.index')}} "><i class="fi-tag"></i>Categoria Dos Produtos</a>
                         </li>
 
+                        <li class="has-submenu">
+                            <a href=" {{route('admin.funcionarios.index')}} "><i class="fi-heart"></i>Funcionarios</a>
+                        </li>
+
                     </ul>
                     <!-- End navigation menu -->
                 </div> <!-- end #navigation -->
@@ -204,7 +208,7 @@
                 $('.ckeditor').ckeditor();
             });
         </script> -->
-
+    <script src="{{ asset('assets/site/js/index.js') }}"></script>
     @yield('script')
 </body>
 

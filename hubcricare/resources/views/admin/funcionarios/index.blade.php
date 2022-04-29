@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('title', 'Funcionarios | admin')
+@section('title', 'Funcionários | admin')
 
 @section('style')
 
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Funcionarios</h4>
+                    <h4 class="page-title">Funcionários</h4>
                 </div>
             </div>
         </div>
@@ -35,8 +35,8 @@
                     <div class="card my-4">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3" style="display: flex;justify-content: space-between; align-items:baseline;">
-                                <h6 class="text-white text-capitalize ps-3">Lista de Funcionarios</h6>
-                                <a href="{{ route('admin.produtos.create') }}" class="btn btn-primary" style="margin-right: 1rem !important">Adicionar novo Funcionarios</a>
+                                <h6 class="text-white text-capitalize ps-3">Lista de Funcionários</h6>
+                                <a href="{{ route('admin.funcionarios.create') }}" class="btn btn-primary" style="margin-right: 1rem !important">Adicionar novo Funcionários</a>
                             </div>
                         </div>
                         <div class="card-body px-0 pb-2">
@@ -46,8 +46,8 @@
                                     <thead>
                                         <tr>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nome</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">WhatsApp</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Data de Aniversario</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Telefone</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Data de Nascimento</th>
                                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Setor</th>
                                             <th class="text-secondary opacity-7"></th>
                                         </tr>
@@ -67,20 +67,20 @@
                                             </td>
 
                                             <td class="align-middle">
-                                                <p class="text-xs font-weight-bold mb-0">{!! Str::limit($funcionario->whatsapp ?? '', 70, '...') !!}</p>
+                                                <p class="text-xs font-weight-bold mb-0">{{$funcionario->phone}}</p>
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <span class="badge badge-sm bg-gradient-success">{{$funcionario->dt_nasc->locale('pt-BR')->translatedFormat('d F Y')}}</span>
+                                                <span class="badge badge-sm bg-gradient-success">{{$funcionario->dt_nasc->locale('pt-BR')->translatedFormat('d/m/Y')}}</span>
                                             </td>
                                             <td class="align-middle text-center">
                                                 <span class="text-secondary text-xs font-weight-bold">{{$funcionario->setor}}</span>
                                             </td>
                                             <td class="align-middle">
-                                                <button type="button" title="Detalhes do Funcionario" class="btn btn-info" data-toggle="modal" data-target="#modal-detalhes" data-id="{{ $funcionario->id }}"><i class="dripicons-italic"></i></button>
+                                                <button type="button" title="Detalhes do Funcionário" class="btn btn-info" data-toggle="modal" data-target="#modal-detalhes" data-id="{{ $funcionario->id }}"><i class="dripicons-italic"></i></button>
                                                 <!-- botao editar -->
-                                                <a type="button" title="Editar Produto" class="btn btn-warning" href="{{ route('admin.funcionarios.edit', $funcionario->id ) }}"><i class="dripicons-pencil"></i></a>
+                                                <a type="button" title="Editar Funcionário" class="btn btn-warning" href="{{ route('admin.funcionarios.edit', $funcionario->id ) }}"><i class="dripicons-pencil"></i></a>
                                                 <!-- Botao apagar -->
-                                                <button type="button" title="Apagar Funcionario" class="btn btn-danger" data-toggle="modal" data-target="#modal-excluir" data-id="{{ $funcionario->id }}"><i class="dripicons-trash"></i></button>
+                                                <button type="button" title="Apagar Funcionário" class="btn btn-danger" data-toggle="modal" data-target="#modal-excluir" data-id="{{ $funcionario->id }}"><i class="dripicons-trash"></i></button>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -100,7 +100,7 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Detalhes do Funcionario</h5>
+                        <h5 class="modal-title">Informações do Funcionário</h5>
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -111,13 +111,18 @@
                             </div>
 
                             <div class="form-group col-md-12 col-sm-12">
-                                <label for="keywords">Categoria</label>
-                                <input id="detalhes-categorie" name="detalhes-categorie" class="form-control" readonly>
+                                <label for="email">E-mail</label>
+                                <input type="text" id="detalhes-email" name="detalhes-email" class="form-control" readonly>
                             </div>
 
                             <div class="form-group col-md-6 col-sm-12">
-                                <label for="description">Descrição</label>
-                                <p type="text" style="word-break: break-all" id="detalhes-description" name="detalhes-description" class="form-control" readonly></p>
+                                <label for="phone">Telefone</label>
+                                <input type="text" id="detalhes-phone" name="detalhes-phone" class="form-control" readonly>
+                            </div>
+
+                            <div class="form-group col-md-12 col-sm-12">
+                                <label for="setor">Setor</label>
+                                <input type="text" id="detalhes-setor" name="detalhes-setor" class="form-control" readonly>
                             </div>
 
                             <div class="form-group col-md-6 col-sm-12">
@@ -141,7 +146,7 @@
                     <div class="modal-header">
                         <h5 class="modal-title col-12 text-dark" id="postModalLabel">Confirmação</h5>
                     </div>
-                    <div class="modal-body" align="center">Tem certeza de que quer excluir esse Produto?</div>
+                    <div class="modal-body" align="center">Tem certeza de que quer excluir esse Funcionário?</div>
                     <div class="modal-footer">
                         <form id="form-excluir" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -197,19 +202,20 @@
             var button = $(event.relatedTarget)
             let modal = $(this)
             const id = button.data('id')
-            const url = 'produtos/' + id
+            const url = 'funcionarios/' + id
             $.getJSON(url, (resposta) => {
-                $("#detalhes-name").val(resposta[0].name);
-                $("#detalhes-description").html(resposta[0].description);
-                $('#detalhes-image').attr('src', '/storage/' + resposta[0].image);
-                $("#detalhes-categorie").val(resposta[1].categorie);
+                $("#detalhes-name").val(resposta.name);
+                $("#detalhes-email").val(resposta.email);
+                $("#detalhes-phone").val(resposta.phone);
+                $("#detalhes-setor").val(resposta.setor);
+                $('#detalhes-image').attr('src', '/storage/' + resposta.image);
             });
         })
         /* js para abrir Modal de excluir de forma dinâmica */
         $('#modal-excluir').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             const id = button.data('id')
-            $('#form-excluir').attr('action', 'produtos/' + id)
+            $('#form-excluir').attr('action', 'funcionarios/' + id)
         })
     });
 </script>
