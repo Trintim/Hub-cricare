@@ -20,7 +20,7 @@ class Funcionario extends Model
     ];
 
     protected $casts = [
-        'dt_nasc' => 'datetime:d/m/Y',
+        'dt_nasc' => 'datetime:Y/m/d',
     ];
 
     public function getCreatedAtFormatAttribute()

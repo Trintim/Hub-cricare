@@ -210,6 +210,18 @@
         </script> -->
     <script src="{{ asset('assets/site/js/index.js') }}"></script>
     @yield('script')
+
+    <script>
+        $(document).ready(function() {
+            setTimeout( function (){
+                $('#myModal').modal('show');
+
+                setTimeout( function (){
+                    $('#myModal').modal('hide');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
