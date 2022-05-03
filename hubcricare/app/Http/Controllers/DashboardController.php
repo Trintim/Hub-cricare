@@ -29,9 +29,8 @@ class DashboardController extends Controller
         $aniversariante = Funcionario::whereDay('dt_nasc', $dia)->whereMonth('dt_nasc', $mes)->orderByRaw('day(dt_nasc) asc')->get();
         /* dd($aniversariante); */
 
-        $ok = Carbon::parse("$dia-$mes-$ano");
-        //dd($ok);
+        $data = Carbon::parse("$dia-$mes-$ano");
 
-        return view('admin.home', compact(['user', 'aniversariantesDoMes', 'dataAtual', 'ano', 'ok', 'dia', 'mes', 'aniversariante']));
+        return view('admin.home', compact(['user', 'aniversariantesDoMes', 'dataAtual', 'ano', 'data', 'aniversariante']));
     }
 }

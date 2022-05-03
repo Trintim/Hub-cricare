@@ -116,7 +116,7 @@
         </div> <!-- end navbar-custom -->
     </header>
     <!-- End Navigation Bar-->
-    @include('components.alerts')
+
     @yield('content')
 
     <div id="modal-user" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -218,8 +218,8 @@
 
                 setTimeout( function (){
                     $('#myModal').modal('hide');
-                });
-            });
+                }, 15000);
+            }, 2000);
         });
     </script>
 </body>
