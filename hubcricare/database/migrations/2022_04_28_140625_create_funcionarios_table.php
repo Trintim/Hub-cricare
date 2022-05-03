@@ -18,7 +18,7 @@ class CreateFuncionariosTable extends Migration
             $table->string('name', 50);
             $table->string('email');
             $table->string('phone');
-            $table->dateTime('dt_nasc');
+            $table->date('dt_nasc');
             $table->string('image');
             $table->string('setor');
             $table->timestamps();
