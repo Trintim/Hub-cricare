@@ -101,7 +101,7 @@ class FuncionarioController extends Controller
 
         if($request->hasFile('image')){
             Storage::delete('public/'.$funcionario->image);
-            $datas['image'] = $request->file('image')->store('funcionario', 'public');
+            $datas['image'] = $request->file('image')->store('funcionarios', 'public');
         }
 
         $funcionario->update($datas);
