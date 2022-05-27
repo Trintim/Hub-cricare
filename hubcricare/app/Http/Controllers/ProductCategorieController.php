@@ -111,7 +111,7 @@ class ProductCategorieController extends Controller
      */
     public function destroy($id)
     {
-        $productcategories = $this->products->find($id);
+        $productcategories = $this->productcategories->find($id);
         $productcategories->delete();
         return redirect(route('admin.productCategories.index'))->with('success', 'Produto excluido com sucesso!');
     }
