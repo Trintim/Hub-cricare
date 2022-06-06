@@ -104,7 +104,7 @@ class ProdutoController extends Controller
             $datas['image'] = $request->file('image')->store('products', 'public');
         }
 
-        $this->products->update($datas);
+        $product->update($datas);
         return redirect(route('admin.produtos.index'))->with('success', 'Produto atualizado com sucesso!');
     }
 
