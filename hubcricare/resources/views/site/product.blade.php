@@ -39,10 +39,10 @@
 
             <div class="col-lg-4">
                 <div class="portfolio-info">
-                    <h3>Informações do Produto</h3>
+                    <h3>Informações do Serviço</h3>
                     <ul>
                         <li><strong>Categoria</strong>: {{$categorie->categorie}}</li>
-                        <li><strong>Data de Inclusão do Produto</strong>: {{$product->created_at->locale('pt-BR')->translatedFormat('d F Y')}}</li>
+                        {{-- <li><strong>Data de Inclusão do Produto</strong>: {{$product->created_at->locale('pt-BR')->translatedFormat('d F Y')}}</li> --}}
                     </ul>
                 </div>
                 <div class="portfolio-description">

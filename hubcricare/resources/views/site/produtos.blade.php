@@ -8,7 +8,7 @@
         <div class="container" data-aos="zoom-in">
 
             <div class="text-center">
-                <h3>Confira Nosso Catálogo de Produtos</h3>
+                <h3>Confira Nosso Catálogo de Serviços</h3>
             </div>
 
         </div>
@@ -19,8 +19,8 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Produtos</h2>
-                <p>Todos Os Nossos Produtos</p>
+                <h2>Serviços</h2>
+                <p>Todos Os Nossos Serviços</p>
             </div>
 
             <div class="row" data-aos="fade-up" data-aos-delay="100">

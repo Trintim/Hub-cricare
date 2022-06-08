@@ -23,12 +23,23 @@ class SendMailRequest extends FormRequest
      */
     public function rules()
     {
+        $this->redirect = url()->previous() . '#contact';
         return [
-            'name'=>['required'],
-            'email'=>['required','email'],
-            'telefone'=>['required'],
-            'subject'=>['required'],
-            'message'=>['required'],
+            'name' => 'required',
+            'email' => 'required','email',
+            'telefone' => 'required',
+            'subject' => 'required',
+            'message' => 'required',
+            'g-recaptcha-response' => ['required', 'captcha'],
+        ];
+
+    }
+
+    public function messages()
+    {
+        return [
+            'g-recaptcha-response.required' => 'Por favor faça a verificação acima.',
+            'g-recaptcha-response.captcha' => 'Erro na verificação! Tente novamente mais tarde.',
         ];
     }
 }

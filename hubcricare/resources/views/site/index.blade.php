@@ -84,7 +84,7 @@ Hub do Cricaré
 
             <div class="clients-slider swiper">
                 <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/LOGO-PNG.png" class="img-fluid" alt=""></div>
                     <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
                     <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
                     <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
@@ -153,7 +153,7 @@ Hub do Cricaré
     <!-- End Cta Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    {{-- <section id="services" class="services">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
@@ -217,7 +217,51 @@ Hub do Cricaré
             </div>
 
         </div>
-    </section><!-- End Services Section -->
+    </section> --}}<!-- End Services Section -->
+
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Serviços</h2>
+                <p>Nossos Serviços</p>
+            </div>
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                @for ($i = (count($products)-1); $i >= (count($products) - ((count($products)>=3) ? 3 : count($products))); $i--)
+                    @foreach ($products as $status => $product)
+                        @if (!$status)
+                            <div class="col-lg-4 col-md-6 portfolio-item">
+                                <div class="portfolio-wrap">
+                                    <img src="{{ url('storage/' . $products[$i]->image) }}" class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                        <a href="{{ route('site.product', $products[$i]->id) }}" title="Mais Detalhes">
+                                            <h4>{{$products[$i]->name}}</h4>
+                                            @foreach ($categories as $categorie)
+                                                @if ($categorie->id == $products[$i]->productcategorie_id)
+                                                    <p>{!! $categorie->categorie !!}</p>
+                                                @endif
+                                            @endforeach
+                                            <div class="portfolio-links">
+                                                <a href="{{ route('site.product', $products[$i]->id) }}" title="Mais Detalhes"><i class="bx bx-plus"></i></a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                @endfor
+            </div>
+            <div style="display: flex; align-items: center; justify-content:center; padding:30px 30px 0 30px;">
+                <a class="btn btn-product" href="{{ route('site.produtos') }}" role="button">Veja Mais</a>
+            </div>
+        </div>
+    </section><!-- End Portfolio Section -->
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
@@ -309,48 +353,6 @@ Hub do Cricaré
     </section>
     <!-- End Team Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Produtos</h2>
-                <p>Nossos Produtos</p>
-            </div>
-
-            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-                @for ($i = (count($products)-1); $i >= (count($products) - ((count($products)>=3) ? 3 : count($products))); $i--)
-                    @foreach ($products as $status => $product)
-                        @if (!$status)
-                            <div class="col-lg-4 col-md-6 portfolio-item">
-                                <div class="portfolio-wrap">
-                                    <img src="{{ url('storage/' . $products[$i]->image) }}" class="img-fluid" alt="">
-                                    <div class="portfolio-info">
-                                        <a href="{{ route('site.product', $products[$i]->id) }}" title="Mais Detalhes">
-                                            <h4>{{$products[$i]->name}}</h4>
-                                            @foreach ($categories as $categorie)
-                                                @if ($categorie->id == $products[$i]->productcategorie_id)
-                                                    <p>{!! $categorie->categorie !!}</p>
-                                                @endif
-                                            @endforeach
-                                            <div class="portfolio-links">
-                                                <a href="{{ route('site.product', $products[$i]->id) }}" title="Mais Detalhes"><i class="bx bx-plus"></i></a>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
-                    @endforeach
-                @endfor
-            </div>
-            <div style="display: flex; align-items: center; justify-content:center; padding:30px 30px 0 30px;">
-                <a class="btn btn-product" href="{{ route('site.produtos') }}" role="button">Veja Mais</a>
-            </div>
-        </div>
-    </section><!-- End Portfolio Section -->
-
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
@@ -392,30 +394,64 @@ Hub do Cricaré
                         @csrf
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Nome" required>
+                                <input type="text" id="name" name="name" value="{{ old('name') }}"
+                                    class="form-control @error('name') is-invalid @enderror" placeholder="Seu nome" required>
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Seu melhor E-mail" required>
+                                <input type="email" id="email" name="email" value="{{ old('email') }}"
+                                    class="form-control @error('email') is-invalid @enderror" placeholder="E-mail" required>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                         <div class="row">
 
                             <div class="col-md-6 form-group">
-                                <br>
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Motivo do contato" required>
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Motivo do contato" >
                             </div>
                             <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <br>
-                                <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Telefone/ Celular" required>
+                                <input type="tel" id="telefone" name="telefone" value="{{ old('telefone') }}"
+                                    class="form-control @error('telefone') is-invalid @enderror" placeholder="Telefone" required>
+                                @error('telefone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
 
                         <div class="form-group mt-3">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Mensagem"></textarea>
+                            <textarea id="message" name="message" class="form-control @error('message') is-invalid @enderror"
+                                placeholder="Mensagem" required>{{ old('message') }}</textarea>
+                            @error('message')
+                                <span class="invalid-feedback" role="alert">
+                                    <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
+                                </span>
+                            @enderror
                             <br>
                         </div>
-
+                        <!-- ReCaptcha -->
+                            <div class="d-flex justify-content-center " style=" margin-bottom:15px; flex-wrap: wrap; ">
+                                <div>
+                                    {!! NoCaptcha::renderJs() !!}
+                                    {!! NoCaptcha::display() !!}
+                                </div>
+                                @if ($errors->has('g-recaptcha-response'))
+                                    <span class="help-block" style="color:red; font-size:12px;">
+                                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <!-- End ReCaptcha -->
                         <!-- <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button> -->
 
                         <div class="text-center">
@@ -433,9 +469,11 @@ Hub do Cricaré
                 </div>
 
             </div>
+
             <div>
                 <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.687821542588!2d-39.847391984617346!3d-18.722789487291642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xca0d386e92b0fd%3A0x55b36ec246ae1e91!2sR.%20Humberto%20de%20Almeida%20Franklin%2C%20217%20-%20Universit%C3%A1rio%2C%20S%C3%A3o%20Mateus%20-%20ES%2C%2029941-360!5e0!3m2!1spt-BR!2sbr!4v1636569031498!5m2!1spt-BR!2sbr" frameborder="0" allowfullscreen></iframe>
             </div>
+
 
         </div>
 
