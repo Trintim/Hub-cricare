@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>@yield('title')</title>
+    {!! SEOMeta::generate() !!}
+    {!! OpenGraph::generate() !!}
+    {!! JsonLd::generate() !!}
 
     <!-- Favicons -->
     <link href="{{asset('assets/img/logo.png')}}" rel="icon">

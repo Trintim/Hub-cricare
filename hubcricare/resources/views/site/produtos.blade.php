@@ -1,7 +1,5 @@
 @extends('layout.site')
 
-@section('title', 'Hub do Cricaré')
-
 @section('content')
 
     <section id="cta" class="cta">

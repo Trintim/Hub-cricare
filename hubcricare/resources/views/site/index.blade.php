@@ -1,11 +1,6 @@
 @extends('layout.site')
 
-@section('title')
-Hub do Cricaré
-@endsection
-
 @section('content')
-
 
 <!--=======Hero Section=======-->
 <section id="hero" class="d-flex align-items-center justify-content-center">
