@@ -38,7 +38,7 @@
                 </div>
             @endforeach
         @endif
-        @if($aniversariantesDoMes)
+        {{-- @if($aniversariantesDoMes)
             @foreach($aniversariantesDoMes as $aniversariantes)
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -59,6 +59,58 @@
                     </div>
                 </div>
             @endforeach
+        @endif --}}
+        @if(isset($aniversariantesDoMes))
+            <div class="container-fluid py-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card my-4">
+                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3" style="display: flex;justify-content: space-between; align-items:baseline;">
+                                    <h6 class="text-white text-capitalize ps-3">Lista de Aniversariantes do Mês</h6>
+                                </div>
+                            </div>
+                            <div class="card-body px-0 pb-2">
+                                <div class="table-responsive p-0">
+
+                                    <table class="table align-items-center mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nome</th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aniverario</th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Setor</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($aniversariantesDoMes as $funcionario)
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-2 py-1">
+                                                        <div>
+                                                            <img src="/storage/{{ $funcionario->image}}" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
+                                                        </div>
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">{{$funcionario->name}}</h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle text-center text-sm">
+                                                    <span class="badge badge-sm bg-gradient-success">{{$funcionario->dt_nasc->format('d/m')}}/{{$ano}}</span>
+                                                </td>
+                                                <td class="align-middle text-center">
+                                                    <span class="text-secondary text-xs font-weight-bold">{{$funcionario->setor}}</span>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         @endif
     </div>
 </div> <!-- end wrapper -->
