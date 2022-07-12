@@ -65,6 +65,38 @@
             </div>
 
         </div>
+
+    </section>
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4">
+            <div class="icon-box d-flex align-items-center flex-column" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="ri-rocket-2-fill"></i></div>
+              <h4 class="title"><a href="">Missão</a></h4>
+              <p class="description">Unidos ao centro universitário vale do Cricaré (UNIVC) promover as melhores soluções tecnológicas e educacionais do Norte do Espirito Santo.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4">
+            <div class="icon-box d-flex align-items-center flex-column" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="ri-leaf-fill"></i></div>
+              <h4 class="title"><a href="">Visão</a></h4>
+              <p class="description">Ser reconhecida como a maior empresa de soluções tecnológicas do Norte do espirito santo.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4">
+            <div class="icon-box d-flex align-items-center flex-column" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="ri-hand-heart-fill"></i></div>
+              <h4 class="title"><a href="">Valores</a></h4>
+              <p class="description">Inovação, Cordialidade, Seriedade e Produtividade</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
     <!-- End About Section -->
 
@@ -435,7 +467,7 @@
                             <br>
                         </div>
                         <!-- ReCaptcha -->
-                            <div class="d-flex justify-content-center " style=" margin-bottom:15px; flex-wrap: wrap; ">
+                            <div class="d-flex justify-content-center" style="margin-bottom:15px; flex-wrap: wrap;">
                                 <div>
                                     {!! NoCaptcha::renderJs() !!}
                                     {!! NoCaptcha::display() !!}
