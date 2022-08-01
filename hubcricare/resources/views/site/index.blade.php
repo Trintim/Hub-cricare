@@ -29,17 +29,17 @@
         <div class="container" data-aos="fade-up">
 
             <div class="row">
-                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="2000">
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="assets/img//team/time1.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 360px; object-fit:cover;">
+                                <img src="assets/img//team/team-01.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 360px; object-fit:cover;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/frame.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 360px; object-fit:cover;">
                             </div>
                             <div class="carousel-item">
                                 <img src="assets/img//team/time3.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 360px; object-fit:cover;">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/img//team/time0.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 360px; object-fit:cover;">
                             </div>
                         </div>
                     </div>
@@ -111,12 +111,12 @@
 
             <div class="clients-slider swiper">
                 <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide"><img src="assets/img/clients/LOGO-PNG.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-10.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><a href=""><img src="assets/img/clients/LOGO-PNG.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://revista.ivc.br/index.php/revistafoz"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://youvale.com.br/"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://repositorio.ivc.br/"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://rumosdainformacao.ivc.br/index.php/rumosdainformacao"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://www.univc.com.br/"><img src="assets/img/clients/client-10.png" class="img-fluid" alt=""></a></div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
