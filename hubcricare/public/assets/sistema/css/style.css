@@ -40,6 +40,9 @@ File: Main Css File
 33. Responsive
 */
 @import url("https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700|Roboto:400,500,700");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* ===========
    Menu
  =============*/

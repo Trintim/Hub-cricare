@@ -36,7 +36,7 @@
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3" style="display: flex;justify-content: space-between; align-items:baseline;">
                                 <h6 class="text-white text-capitalize ps-3">Lista de Funcionários</h6>
-                                <a href="{{ route('admin.funcionarios.create') }}" class="btn btn-primary" style="margin-right: 1rem !important">Adicionar novo Funcionários</a>
+                                <a href="{{ route('admin.funcionarios.create') }}" class="btn btn-primary" style="margin-right: 1rem !important">Novo Funcionários</a>
                             </div>
                         </div>
                         <div class="card-body px-0 pb-2">
@@ -55,7 +55,7 @@
                                     <tbody>
                                         @foreach($funcionarios as $funcionario)
                                         <tr>
-                                            <td>
+                                            <td class="align-middle">
                                                 <div class="d-flex px-2 py-1">
                                                     <div>
                                                         <img src="/storage/{{ $funcionario->image}}" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">

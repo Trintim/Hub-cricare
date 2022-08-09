@@ -42,7 +42,8 @@ class SiteController extends Controller
 
         $categories = Productcategorie::all();
         $products = Product::where('status', true)->get();
-        return view('site.index', compact('products', 'categories'));
+        //return view('site.index', compact('products', 'categories'));
+        return view('site.index2');
     }
 
     public function produtos(){

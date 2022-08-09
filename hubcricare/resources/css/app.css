@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.animation-hover:after {
+  background: none repeat scroll 0 0 transparent;
+  content: "";
+  height: 2px;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  @apply w-0 bg-teal-400 left-1/2 block bottom-0 absolute;
+}
+.animation-active:after {
+  @apply left-0 w-full;
+}
+.animation-hover:hover:after {
+  @apply left-0 w-full;
+}
+
+
+@layer components {
+  .navbar-active .hamburger div:first-child {
+    @apply rotate-45 translate-y-1.5;
+  }
+  .navbar-active .hamburger div:last-child {
+    @apply -rotate-45 -translate-y-1;
+  }
+  .navbar-active div:first-child div:first-child div:last-child{
+    @apply block lg:flex
+  }
+}
